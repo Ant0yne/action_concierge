@@ -1,29 +1,21 @@
-extends Area2D
+extends KinematicBody2D
 
-export var vit := int(400)  # How fast the player will move (pixels/sec).
-export var velo := int(1)
-var taille_ecran  # Size of the game window.
+const ACCELERATION = int(25)
+const VIT_MAX = int(250)
+const FRICTION = int(20)
 
-func _ready():
-	taille_ecran = get_viewport_rect().size
+var velocite = Vector2.ZERO
 
-func _process(delta):
-	var velocity = Vector2()  # The player's movement vector.
-	if Input.is_action_pressed("ui_right"):
-		velocity.x += velo
-		velocity.UP
-	if Input.is_action_pressed("ui_left"):
-		velocity.x -= velo
-	if Input.is_action_pressed("ui_down"):
-		velocity.y += velo
-	if Input.is_action_pressed("ui_up"):
-		velocity.y -= velo
-	if velocity.length() > 0:
-		velocity = velocity.normalized() * vit
-#		$AnimatedSprite.play()
-#	else:
-#		$AnimatedSprite.stop()
-
-	position += velocity * delta
-	position.x = clamp(position.x, 0, taille_ecran.x)
-	position.y = clamp(position.y, 0, taille_ecran.y)
+func _physics_process(delta):
+	var input_vecteur = Vector2.ZERO
+	input_vecteur.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+	input_vecteur.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	input_vecteur = input_vecteur.normalized()
+	
+	if input_vecteur != Vector2.ZERO:
+		velocite += input_vecteur * ACCELERATION * delta
+		velocite = velocite.clamped(VIT_MAX * delta)
+	else:
+		velocite = velocite.move_toward(Vector2.ZERO, FRICTION * delta)
+	
+	move_and_collide(velocite)
