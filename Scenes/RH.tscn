@@ -1,3 +1,31 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource path="res://RH/RH.png" type="Texture" id=1]
+[ext_resource path="res://Script/RH.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/HurtBox.tscn" type="PackedScene" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 30.0082, 29.8916 )
+
+[node name="RH" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="HurtBoxe" parent="." instance=ExtResource( 3 )]
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="HurtBoxe" index="0"]
+shape = SubResource( 2 )
+[connection signal="area_entered" from="HurtBoxe" to="." method="_on_HurtBoxe_area_entered"]
+
+[editable path="HurtBoxe"]
