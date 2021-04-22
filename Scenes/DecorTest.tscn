@@ -6,6 +6,7 @@
 extents = Vector2( 27.1051, 10 )
 
 [node name="DecorTest" type="StaticBody2D"]
+collision_mask = 0
 __meta__ = {
 "_edit_group_": true
 }

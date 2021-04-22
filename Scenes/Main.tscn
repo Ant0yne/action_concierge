@@ -21,3 +21,18 @@ position = Vector2( 347.777, 240.298 )
 
 [node name="RH2" parent="YSort/RH" instance=ExtResource( 3 )]
 position = Vector2( 627.791, 154.031 )
+
+[node name="RH3" parent="YSort/RH" instance=ExtResource( 3 )]
+position = Vector2( 974.393, 152.735 )
+
+[node name="RH4" parent="YSort/RH" instance=ExtResource( 3 )]
+position = Vector2( 1135.61, 526.087 )
+
+[node name="RH5" parent="YSort/RH" instance=ExtResource( 3 )]
+position = Vector2( 380.423, 513.36 )
+
+[node name="RH6" parent="YSort/RH" instance=ExtResource( 3 )]
+position = Vector2( 296.985, 77.7818 )
+
+[node name="RH7" parent="YSort/RH" instance=ExtResource( 3 )]
+position = Vector2( 750.947, 593.97 )

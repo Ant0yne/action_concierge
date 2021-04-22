@@ -21,7 +21,7 @@ var velocite = Vector2.ZERO
 func _ready():
 	animationTree.active = true
 
-func _process(delta):
+func _physics_process(delta):
 	match etat:
 		MARCHE:
 			marche_etat(delta)

@@ -68,6 +68,13 @@ ui_attaque={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Main"
+2d_physics/layer_2="Personnage"
+2d_physics/layer_3="PersonnageHurtBox"
+2d_physics/layer_4="RHHurtBox"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
