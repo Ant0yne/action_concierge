@@ -21,24 +21,24 @@ animations = [ {
 "name": "Idle Bas",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle Haut",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Marche Haut",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Marche Droite",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "Idle Gauche",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "Idle Droite",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Attaque haut",
+"name": "Marche Bas",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -51,40 +51,39 @@ animations = [ {
 "name": "Attaque Gauche",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 8 ) ],
 "loop": true,
-"name": "Attaque Droite",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "Idle Haut",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "Marche Haut",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Marche Bas",
+"name": "Idle Gauche",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "Attaque Bas",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Attaque haut",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Attaque Droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle Droite",
+"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=35]
-extents = Vector2( 30, 30 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 25, 9 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "AttaqueBas"
+[sub_resource type="Animation" id=3]
 length = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -96,49 +95,7 @@ tracks/0/keys = {
 "values": [ "Attaque Bas" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "animation_attaque_termine"
-} ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "AttaqueDroite"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Attaque Droite" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -165,10 +122,9 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-resource_name = "AttaqueGauche"
 length = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -177,10 +133,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Attaque Gauche" ]
+"values": [ "Attaque Droite" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -207,10 +163,9 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "AttaqueHaut"
 length = 0.2
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -219,10 +174,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Attaque haut" ]
+"values": [ "Attaque Gauche" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -249,9 +204,50 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id=6]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Attaque haut" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "animation_attaque_termine"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/0/path = NodePath("AnimatedSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -263,7 +259,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/1/path = NodePath("AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -275,10 +271,10 @@ tracks/1/keys = {
 "values": [ "Idle Bas" ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/0/path = NodePath("AnimatedSprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -290,7 +286,7 @@ tracks/0/keys = {
 "values": [ 1, 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/1/path = NodePath("AnimatedSprite:animation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -302,10 +298,10 @@ tracks/1/keys = {
 "values": [ "Idle Droite" ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -317,34 +313,7 @@ tracks/0/keys = {
 "values": [ "Idle Gauche" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=9]
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "Idle Haut" ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -359,7 +328,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=10]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -368,10 +337,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Marche Bas" ]
+"values": [ "Idle Haut" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -386,7 +355,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=11]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -395,10 +364,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Marche Droite" ]
+"values": [ "Marche Bas" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -413,7 +382,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=12]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -422,10 +391,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Marche Gauche" ]
+"values": [ "Marche Droite" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -440,7 +409,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id=13]
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("../Personnage/AnimatedSprite:animation")
+tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -449,10 +418,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "Marche Haut" ]
+"values": [ "Marche Gauche" ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../Personnage/AnimatedSprite:frame")
+tracks/1/path = NodePath("AnimatedSprite:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -464,82 +433,107 @@ tracks/1/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=14]
-animation = "AttaqueBas"
+[sub_resource type="Animation" id=14]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Marche Haut" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnimatedSprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="AnimationNodeAnimation" id=15]
-animation = "AttaqueDroite"
+animation = "AttaqueBas"
 
 [sub_resource type="AnimationNodeAnimation" id=16]
-animation = "AttaqueGauche"
+animation = "AttaqueDroite"
 
 [sub_resource type="AnimationNodeAnimation" id=17]
+animation = "AttaqueGauche"
+
+[sub_resource type="AnimationNodeAnimation" id=18]
 animation = "AttaqueHaut"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=18]
-blend_point_0/node = SubResource( 14 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=19]
+blend_point_0/node = SubResource( 15 )
 blend_point_0/pos = Vector2( 0, 1.1 )
-blend_point_1/node = SubResource( 15 )
+blend_point_1/node = SubResource( 16 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 16 )
+blend_point_2/node = SubResource( 17 )
 blend_point_2/pos = Vector2( -1, 0 )
-blend_point_3/node = SubResource( 17 )
+blend_point_3/node = SubResource( 18 )
 blend_point_3/pos = Vector2( 0, -1.1 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id=19]
-animation = "IdleGauche"
 
 [sub_resource type="AnimationNodeAnimation" id=20]
-animation = "IdleDroite"
+animation = "IdleGauche"
 
 [sub_resource type="AnimationNodeAnimation" id=21]
-animation = "IdleBas"
+animation = "IdleDroite"
 
 [sub_resource type="AnimationNodeAnimation" id=22]
+animation = "IdleBas"
+
+[sub_resource type="AnimationNodeAnimation" id=23]
 animation = "IldeHaut"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=23]
-blend_point_0/node = SubResource( 19 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=24]
+blend_point_0/node = SubResource( 20 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 20 )
+blend_point_1/node = SubResource( 21 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 21 )
+blend_point_2/node = SubResource( 22 )
 blend_point_2/pos = Vector2( 0, 1.1 )
-blend_point_3/node = SubResource( 22 )
+blend_point_3/node = SubResource( 23 )
 blend_point_3/pos = Vector2( 0, -1.1 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id=24]
-animation = "MarcheGauche"
 
 [sub_resource type="AnimationNodeAnimation" id=25]
-animation = "MarcheDroite"
+animation = "MarcheGauche"
 
 [sub_resource type="AnimationNodeAnimation" id=26]
-animation = "MarcheBas"
+animation = "MarcheDroite"
 
 [sub_resource type="AnimationNodeAnimation" id=27]
+animation = "MarcheBas"
+
+[sub_resource type="AnimationNodeAnimation" id=28]
 animation = "MarcheHaut"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=28]
-blend_point_0/node = SubResource( 24 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=29]
+blend_point_0/node = SubResource( 25 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 25 )
+blend_point_1/node = SubResource( 26 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 26 )
+blend_point_2/node = SubResource( 27 )
 blend_point_2/pos = Vector2( 0, 1.1 )
-blend_point_3/node = SubResource( 27 )
+blend_point_3/node = SubResource( 28 )
 blend_point_3/pos = Vector2( 0, -1.1 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=29]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=30]
 
@@ -547,18 +541,20 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=32]
 
-[sub_resource type="AnimationNodeStateMachine" id=33]
-states/Attaque/node = SubResource( 18 )
+[sub_resource type="AnimationNodeStateMachineTransition" id=33]
+
+[sub_resource type="AnimationNodeStateMachine" id=34]
+states/Attaque/node = SubResource( 19 )
 states/Attaque/position = Vector2( 320, 244 )
-states/Idle/node = SubResource( 23 )
+states/Idle/node = SubResource( 24 )
 states/Idle/position = Vector2( 320, 138 )
-states/Marche/node = SubResource( 28 )
+states/Marche/node = SubResource( 29 )
 states/Marche/position = Vector2( 540, 138 )
-transitions = [ "Idle", "Marche", SubResource( 29 ), "Marche", "Idle", SubResource( 30 ), "Attaque", "Idle", SubResource( 31 ), "Idle", "Attaque", SubResource( 32 ) ]
+transitions = [ "Idle", "Marche", SubResource( 30 ), "Marche", "Idle", SubResource( 31 ), "Attaque", "Idle", SubResource( 32 ), "Idle", "Attaque", SubResource( 33 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -4, 86 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=34]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=35]
 
 [node name="Personnage" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -567,30 +563,31 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -23 )
 frames = SubResource( 1 )
 animation = "Attaque Bas"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 35 )
+shape = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/AttaqueBas = SubResource( 2 )
-anims/AttaqueDroite = SubResource( 3 )
-anims/AttaqueGauche = SubResource( 4 )
-anims/AttaqueHaut = SubResource( 5 )
-anims/IdleBas = SubResource( 6 )
-anims/IdleDroite = SubResource( 7 )
-anims/IdleGauche = SubResource( 8 )
-anims/IldeHaut = SubResource( 9 )
-anims/MarcheBas = SubResource( 10 )
-anims/MarcheDroite = SubResource( 11 )
-anims/MarcheGauche = SubResource( 12 )
-anims/MarcheHaut = SubResource( 13 )
+anims/AttaqueBas = SubResource( 3 )
+anims/AttaqueDroite = SubResource( 4 )
+anims/AttaqueGauche = SubResource( 5 )
+anims/AttaqueHaut = SubResource( 6 )
+anims/IdleBas = SubResource( 7 )
+anims/IdleDroite = SubResource( 8 )
+anims/IdleGauche = SubResource( 9 )
+anims/IldeHaut = SubResource( 10 )
+anims/MarcheBas = SubResource( 11 )
+anims/MarcheDroite = SubResource( 12 )
+anims/MarcheGauche = SubResource( 13 )
+anims/MarcheHaut = SubResource( 14 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 33 )
+tree_root = SubResource( 34 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 34 )
+parameters/playback = SubResource( 35 )
 parameters/Attaque/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Marche/blend_position = Vector2( 0, 0 )
