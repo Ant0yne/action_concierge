@@ -1,9 +1,9 @@
 extends KinematicBody2D
 
-const ACCELERATION = int(25)
+const ACCELERATION = int(500)
 const VIT_MAX = int(250)
-const FRICTION = int(20)
-const VIT_DASH = int(5000)
+const FRICTION = int(600)
+const VIT_DASH = int(600)
 
 enum {
 	MARCHE,
@@ -44,16 +44,16 @@ func marche_etat(delta):
 		animationTree.set("parameters/Marche/blend_position", input_vecteur)
 		animationTree.set("parameters/Attaque/blend_position", input_vecteur)
 		animationState.travel("Marche")
-		velocite += input_vecteur * ACCELERATION * delta
-		velocite = velocite.clamped(VIT_MAX * delta)
+		velocite = velocite.move_toward(input_vecteur * VIT_MAX, ACCELERATION * delta)
 	else:
 		animationState.travel("Idle")
 		velocite = velocite.move_toward(Vector2.ZERO, FRICTION * delta)
 	
 	if Input.is_action_just_pressed("ui_dash"):
-		velocite += input_vecteur * VIT_DASH * delta
+		#velocite += input_vecteur * VIT_DASH * delta
+		velocite = velocite.move_toward(input_vecteur * VIT_DASH, VIT_DASH)
 	
-	move_and_collide(velocite)
+	velocite = move_and_slide(velocite)
 	
 	if Input.is_action_just_pressed("ui_attaque"):
 		etat = ATTAQUE
