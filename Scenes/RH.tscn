@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://RH/RH.png" type="Texture" id=1]
 [ext_resource path="res://Script/RH.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/HurtBox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Stats.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/DetectionPerso.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -13,11 +14,14 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 29.8772, 6.01342 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 30.0082, 29.8916 )
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 108.383
 
 [node name="RH" type="KinematicBody2D"]
 collision_layer = 16
@@ -28,17 +32,25 @@ frames = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 24 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="HurtBoxe" parent="." instance=ExtResource( 3 )]
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="HurtBoxe" index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 max_vie = 3
+
+[node name="DetectionPerso" parent="." instance=ExtResource( 5 )]
+
+[node name="CollisionShape2D" parent="DetectionPerso" index="0"]
+modulate = Color( 1, 1, 1, 0.313726 )
+shape = SubResource( 4 )
 [connection signal="area_entered" from="HurtBoxe" to="." method="_on_HurtBoxe_area_entered"]
 [connection signal="vie_zero" from="Stats" to="." method="_on_Stats_vie_zero"]
 
 [editable path="HurtBoxe"]
+
+[editable path="DetectionPerso"]

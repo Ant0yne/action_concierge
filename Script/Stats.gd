@@ -1,7 +1,7 @@
 extends Node
 
-export var max_vie = 1
-onready var vie = max_vie setget set_vie
+export var max_vie = int(1)
+onready var vie = int(max_vie) setget set_vie
 
 signal vie_zero
 
