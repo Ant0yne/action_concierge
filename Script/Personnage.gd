@@ -38,7 +38,6 @@ func _physics_process(delta):
 		ATTAQUE:
 			attaque_etat(delta)
 
-
 func marche_etat(delta):
 	var input_vecteur = Vector2.ZERO
 	input_vecteur.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
@@ -85,10 +84,3 @@ func animation_dash_termine():
 	velocite = Vector2.ZERO
 #	velocite = velocite * 0.8
 	etat = MARCHE
-
-
-
-
-
-
-

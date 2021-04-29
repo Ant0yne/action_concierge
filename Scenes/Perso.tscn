@@ -27,14 +27,9 @@ animations = [ {
 "name": "Marche Gauche",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "Marche Haut",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Idle Gauche",
+"name": "Marche Bas",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -42,34 +37,24 @@ animations = [ {
 "name": "Marche Droite",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle Gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "Dash Haut",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Marche Haut",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "Idle Droite",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "Attaque Bas",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Marche Bas",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "Attaque Gauche",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "Idle Bas",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "Attaque Droite",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ) ],
@@ -77,9 +62,9 @@ animations = [ {
 "name": "Attaque haut",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "Idle Haut",
+"name": "Attaque Droite",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ) ],
@@ -87,19 +72,34 @@ animations = [ {
 "name": "Dash Bas",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "Dash Droite",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "Dash Gauche",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "Dash Haut",
+"name": "Idle Haut",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Attaque Bas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Idle Bas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Attaque Gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "Dash Droite",
 "speed": 5.0
 } ]
 
@@ -783,50 +783,25 @@ min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeAnimation" id=41]
+[sub_resource type="AnimationNodeAnimation" id=24]
 animation = "DashGauche"
 
-[sub_resource type="AnimationNodeAnimation" id=42]
+[sub_resource type="AnimationNodeAnimation" id=25]
 animation = "DashBas"
 
-[sub_resource type="AnimationNodeAnimation" id=43]
+[sub_resource type="AnimationNodeAnimation" id=26]
 animation = "DashDroite"
 
-[sub_resource type="AnimationNodeAnimation" id=44]
-animation = "DashHaut"
-
-[sub_resource type="AnimationNodeBlendSpace2D" id=45]
-blend_point_0/node = SubResource( 41 )
-blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 42 )
-blend_point_1/pos = Vector2( 0, 1.1 )
-blend_point_2/node = SubResource( 43 )
-blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 44 )
-blend_point_3/pos = Vector2( 0, -1.1 )
-min_space = Vector2( -1, -1.1 )
-max_space = Vector2( 1, 1.1 )
-blend_mode = 1
-
-[sub_resource type="AnimationNodeAnimation" id=24]
-animation = "IdleGauche"
-
-[sub_resource type="AnimationNodeAnimation" id=25]
-animation = "IdleDroite"
-
-[sub_resource type="AnimationNodeAnimation" id=26]
-animation = "IdleBas"
-
 [sub_resource type="AnimationNodeAnimation" id=27]
-animation = "IldeHaut"
+animation = "DashHaut"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=28]
 blend_point_0/node = SubResource( 24 )
 blend_point_0/pos = Vector2( -1, 0 )
 blend_point_1/node = SubResource( 25 )
-blend_point_1/pos = Vector2( 1, 0 )
+blend_point_1/pos = Vector2( 0, 1.1 )
 blend_point_2/node = SubResource( 26 )
-blend_point_2/pos = Vector2( 0, 1.1 )
+blend_point_2/pos = Vector2( 1, 0 )
 blend_point_3/node = SubResource( 27 )
 blend_point_3/pos = Vector2( 0, -1.1 )
 min_space = Vector2( -1, -1.1 )
@@ -834,16 +809,16 @@ max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
 [sub_resource type="AnimationNodeAnimation" id=29]
-animation = "MarcheGauche"
+animation = "IdleGauche"
 
 [sub_resource type="AnimationNodeAnimation" id=30]
-animation = "MarcheDroite"
+animation = "IdleDroite"
 
 [sub_resource type="AnimationNodeAnimation" id=31]
-animation = "MarcheBas"
+animation = "IdleBas"
 
 [sub_resource type="AnimationNodeAnimation" id=32]
-animation = "MarcheHaut"
+animation = "IldeHaut"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=33]
 blend_point_0/node = SubResource( 29 )
@@ -858,34 +833,59 @@ min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
 blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=34]
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "MarcheGauche"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=35]
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "MarcheDroite"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=36]
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "MarcheBas"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=37]
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "MarcheHaut"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+[sub_resource type="AnimationNodeBlendSpace2D" id=38]
+blend_point_0/node = SubResource( 34 )
+blend_point_0/pos = Vector2( -1, 0 )
+blend_point_1/node = SubResource( 35 )
+blend_point_1/pos = Vector2( 1, 0 )
+blend_point_2/node = SubResource( 36 )
+blend_point_2/pos = Vector2( 0, 1.1 )
+blend_point_3/node = SubResource( 37 )
+blend_point_3/pos = Vector2( 0, -1.1 )
+min_space = Vector2( -1, -1.1 )
+max_space = Vector2( 1, 1.1 )
+blend_mode = 1
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
 
-[sub_resource type="AnimationNodeStateMachine" id=38]
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachine" id=45]
 states/Attaque/node = SubResource( 23 )
 states/Attaque/position = Vector2( 320, 244 )
-states/Dash/node = SubResource( 45 )
+states/Dash/node = SubResource( 28 )
 states/Dash/position = Vector2( 320, 25 )
-states/Idle/node = SubResource( 28 )
+states/Idle/node = SubResource( 33 )
 states/Idle/position = Vector2( 320, 138 )
-states/Marche/node = SubResource( 33 )
+states/Marche/node = SubResource( 38 )
 states/Marche/position = Vector2( 540, 138 )
-transitions = [ "Idle", "Marche", SubResource( 34 ), "Marche", "Idle", SubResource( 35 ), "Attaque", "Idle", SubResource( 36 ), "Idle", "Attaque", SubResource( 37 ), "Dash", "Idle", SubResource( 46 ), "Idle", "Dash", SubResource( 47 ) ]
+transitions = [ "Idle", "Marche", SubResource( 39 ), "Marche", "Idle", SubResource( 40 ), "Attaque", "Idle", SubResource( 41 ), "Idle", "Attaque", SubResource( 42 ), "Dash", "Idle", SubResource( 43 ), "Idle", "Dash", SubResource( 44 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -74, -28 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=39]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=46]
 
-[sub_resource type="RectangleShape2D" id=40]
+[sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 19, 28 )
 
 [node name="Personnage" type="KinematicBody2D"]
@@ -895,7 +895,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -23 )
 frames = SubResource( 1 )
-animation = "Dash Bas"
+animation = "Marche Droite"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
@@ -919,9 +919,9 @@ anims/MarcheGauche = SubResource( 17 )
 anims/MarcheHaut = SubResource( 18 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 38 )
+tree_root = SubResource( 45 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 39 )
+parameters/playback = SubResource( 46 )
 parameters/Attaque/blend_position = Vector2( 0, 0 )
 parameters/Dash/blend_position = Vector2( 0, 0 )
 parameters/Idle/blend_position = Vector2( 0, 0 )
@@ -938,7 +938,7 @@ script = ExtResource( 19 )
 
 [node name="CollisionShape2D" parent="Position2D/BalaiHitBox" index="0"]
 position = Vector2( 0, -23 )
-shape = SubResource( 40 )
+shape = SubResource( 47 )
 disabled = true
 
 [editable path="Position2D/BalaiHitBox"]
