@@ -15,12 +15,15 @@ onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
 onready var balaiHitbox = $Position2D/BalaiHitBox
+onready var stats = PersoStats
+onready var hurtBox = $HurtBoxe
 
 var etat = MARCHE
 var velocite = Vector2.ZERO
 var dash_vecteur = Vector2.DOWN
 
 func _ready():
+	stats.connect("vie_zero", self, "queue_free")
 	animationTree.active = true
 	balaiHitbox.recul_vecteur = dash_vecteur
 	animationTree.set("parameters/Idle/blend_position", Vector2.DOWN)
@@ -84,3 +87,10 @@ func animation_dash_termine():
 	velocite = Vector2.ZERO
 #	velocite = velocite * 0.8
 	etat = MARCHE
+
+func _on_HurtBoxe_area_entered(area):
+	stats.vie -= 1
+	print(stats.vie)
+	hurtBox._start_invincible(2)
+	hurtBox._creer_effet_touche()
+

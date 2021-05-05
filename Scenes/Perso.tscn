@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=2]
+[gd_scene load_steps=69 format=2]
 
 [ext_resource path="res://Perso/icon_idle_haut.png" type="Texture" id=1]
 [ext_resource path="res://Script/Personnage.gd" type="Script" id=2]
@@ -19,17 +19,13 @@
 [ext_resource path="res://Perso/icon_dash_haut.png" type="Texture" id=17]
 [ext_resource path="res://Perso/icon_dash_droite.png" type="Texture" id=18]
 [ext_resource path="res://Script/BalaiHitbox.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/HurtBox.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "Marche Gauche",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Marche Bas",
+"name": "Dash Haut",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -37,39 +33,14 @@ animations = [ {
 "name": "Marche Droite",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "Idle Gauche",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "Dash Haut",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "Marche Haut",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "Idle Droite",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "Attaque haut",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "Attaque Droite",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "Dash Bas",
+"name": "Attaque Bas",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ) ],
@@ -77,14 +48,9 @@ animations = [ {
 "name": "Dash Gauche",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": true,
-"name": "Idle Haut",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "Attaque Bas",
+"name": "Dash Bas",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ) ],
@@ -95,6 +61,41 @@ animations = [ {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Attaque Gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Attaque Droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "Idle Gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Marche Gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Marche Haut",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Marche Bas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Idle Droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "Idle Haut",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 18 ) ],
@@ -888,6 +889,9 @@ graph_offset = Vector2( -74, -28 )
 [sub_resource type="RectangleShape2D" id=47]
 extents = Vector2( 19, 28 )
 
+[sub_resource type="RectangleShape2D" id=48]
+extents = Vector2( 24, 23 )
+
 [node name="Personnage" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 2 )
@@ -941,4 +945,14 @@ position = Vector2( 0, -23 )
 shape = SubResource( 47 )
 disabled = true
 
+[node name="HurtBoxe" parent="." instance=ExtResource( 20 )]
+collision_layer = 4
+
+[node name="CollisionShape2D" parent="HurtBoxe" index="0"]
+position = Vector2( 0, -23 )
+shape = SubResource( 48 )
+[connection signal="area_entered" from="HurtBoxe" to="." method="_on_HurtBoxe_area_entered"]
+
 [editable path="Position2D/BalaiHitBox"]
+
+[editable path="HurtBoxe"]
