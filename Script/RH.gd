@@ -10,6 +10,7 @@ const FRICTION = int(600)
 onready var stats = $Stats
 onready var detectionPerso = $DetectionPerso
 onready var animatedSprite = $AnimatedSprite
+onready var hurtBox = $HurtBoxe
 
 var velocite = Vector2.ZERO
 var recul = Vector2.ZERO
@@ -60,6 +61,7 @@ func creation_rh_effect():
 func _on_HurtBoxe_area_entered(area):
 	recul = area.recul_vecteur * FORCE_RECUL
 	stats.vie -= area.dommage
+	hurtBox._creer_effet_touche()
 
 func _on_Stats_vie_zero():
 	creation_rh_effect()

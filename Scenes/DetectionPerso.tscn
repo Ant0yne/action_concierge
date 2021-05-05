@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scenes/DetectionPerso.gd" type="Script" id=1]
+[ext_resource path="res://Script/DetectionPerso.gd" type="Script" id=1]
 
 [node name="DetectionPerso" type="Area2D"]
 collision_layer = 0

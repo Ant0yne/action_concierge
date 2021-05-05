@@ -19,6 +19,10 @@ config/name="Action Concierge_v001"
 run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+PersoStats="*res://Scenes/PersoStats.tscn"
+
 [display]
 
 window/size/width=1280
