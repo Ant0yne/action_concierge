@@ -4,6 +4,7 @@ const ACCELERATION = int(500)
 const VIT_MAX = int(250)
 const FRICTION = int(600)
 const VIT_DASH = int(1200)
+const TPS_INVINCIBLE = int(2)
 
 enum {
 	MARCHE,
@@ -23,6 +24,7 @@ var velocite = Vector2.ZERO
 var dash_vecteur = Vector2.DOWN
 
 func _ready():
+	randomize()
 	stats.connect("vie_zero", self, "queue_free")
 	animationTree.active = true
 	balaiHitbox.recul_vecteur = dash_vecteur
@@ -36,6 +38,7 @@ func _physics_process(delta):
 			marche_etat(delta)
 			
 		DASH:
+			hurtBox._dash_inv_on()
 			dash_etat(delta)
 			
 		ATTAQUE:
@@ -72,25 +75,26 @@ func attaque_etat(delta):
 	velocite = Vector2.ZERO
 	animationState.travel("Attaque")
 	
+func animation_attaque_termine():
+	etat = MARCHE
+	
 func dash_etat(delta):
 	velocite = dash_vecteur * VIT_DASH
 	animationState.travel("Dash")
 	deplacement()
 	
-func deplacement():
-	velocite = move_and_slide(velocite)
-	
-func animation_attaque_termine():
-	etat = MARCHE
-
 func animation_dash_termine():
 	velocite = Vector2.ZERO
 #	velocite = velocite * 0.8
+	hurtBox._dash_inv_off()
 	etat = MARCHE
+	
+func deplacement():
+	velocite = move_and_slide(velocite)
 
 func _on_HurtBoxe_area_entered(area):
 	stats.vie -= 1
 	print(stats.vie)
-	hurtBox._start_invincible(2)
+	hurtBox._start_invincible(TPS_INVINCIBLE)
 	hurtBox._creer_effet_touche()
 

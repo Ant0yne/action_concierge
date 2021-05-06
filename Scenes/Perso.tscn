@@ -28,44 +28,14 @@ animations = [ {
 "name": "Dash Haut",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "Marche Droite",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "Attaque haut",
+"name": "Attaque Droite",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "Attaque Bas",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "Dash Gauche",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ) ],
-"loop": true,
-"name": "Dash Bas",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "Idle Bas",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "Attaque Gauche",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "Attaque Droite",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -78,9 +48,39 @@ animations = [ {
 "name": "Marche Gauche",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "Marche Haut",
+"name": "Idle Bas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "Dash Bas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Dash Gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Attaque Gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Marche Droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "Dash Droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "Attaque haut",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -88,9 +88,9 @@ animations = [ {
 "name": "Marche Bas",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
-"name": "Idle Droite",
+"name": "Marche Haut",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -98,9 +98,9 @@ animations = [ {
 "name": "Idle Haut",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "Dash Droite",
+"name": "Idle Droite",
 "speed": 5.0
 } ]
 
