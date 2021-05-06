@@ -3,6 +3,7 @@ extends Area2D
 const RHEffetTouche = preload("res://Scenes/RHEffetTouche.tscn")
 
 onready var timer = $Timer
+onready var collisionShape2D = $CollisionShape2D
 
 #var invincible = bool(false) setget _set_invincible
 
@@ -31,10 +32,16 @@ onready var timer = $Timer
 
 func _start_invincible(duree):
 	timer.start(duree)
-	set_deferred("monitorable", false)
+	collisionShape2D.set_deferred("disabled", true)
 
 func _on_Timer_timeout():
-	monitorable = true
+	collisionShape2D.disabled = false
+	
+func _dash_inv_on():
+	collisionShape2D.set_deferred("disabled", true)
+
+func _dash_inv_off():
+	collisionShape2D.disabled = false
 	
 func _creer_effet_touche():
 	var effet = RHEffetTouche.instance()

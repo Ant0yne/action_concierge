@@ -45,4 +45,9 @@ margin_right = 195.0
 margin_bottom = 39.0
 text = "Test"
 
+[node name="LimiteDecor" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LimiteDecor"]
+polygon = PoolVector2Array( 0.000991821, 0.103065, 14.0168, -0.230644, 14.1748, 700.553, 1261.87, 705.315, 1263.53, 75.7654, 14.5685, 72.3055, 14.8546, -0.153463, 1258.19, -27.5789, 1317.87, 2.03447, 1324.94, 765.71, -49, 763 )
+
 [editable path="UIPersoVie"]
