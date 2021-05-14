@@ -23,16 +23,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "Attaque Droite",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "Dash Bas",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ) ],
 "loop": true,
 "name": "Idle Droite",
@@ -41,11 +31,6 @@ animations = [ {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "Idle Gauche",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "Marche Bas",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ) ],
@@ -58,21 +43,6 @@ animations = [ {
 "name": "Marche Gauche",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "Dash Haut",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "Attaque Gauche",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Idle Haut",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "Dash Gauche",
@@ -83,14 +53,19 @@ animations = [ {
 "name": "Idle Bas",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
-"loop": true,
-"name": "Attaque haut",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "Marche Droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "Dash Haut",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "Attaque haut",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -98,9 +73,34 @@ animations = [ {
 "name": "Attaque Bas",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Dash Bas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "Attaque Gauche",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Dash Droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle Haut",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Marche Bas",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Attaque Droite",
 "speed": 5.0
 } ]
 
@@ -145,7 +145,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "animation_attaque_termine"
+"method": "_animation_attaque_termine"
 } ]
 }
 tracks/3/type = "value"
@@ -223,7 +223,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "animation_attaque_termine"
+"method": "_animation_attaque_termine"
 } ]
 }
 tracks/3/type = "value"
@@ -301,7 +301,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "animation_attaque_termine"
+"method": "_animation_attaque_termine"
 } ]
 }
 tracks/3/type = "value"
@@ -379,7 +379,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "animation_attaque_termine"
+"method": "_animation_attaque_termine"
 } ]
 }
 tracks/3/type = "value"
@@ -458,7 +458,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "animation_dash_termine"
+"method": "_animation_dash_termine"
 } ]
 }
 
@@ -501,7 +501,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "animation_dash_termine"
+"method": "_animation_dash_termine"
 } ]
 }
 
@@ -544,7 +544,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "animation_dash_termine"
+"method": "_animation_dash_termine"
 } ]
 }
 
@@ -587,7 +587,7 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
-"method": "animation_dash_termine"
+"method": "_animation_dash_termine"
 } ]
 }
 
@@ -930,7 +930,7 @@ states/Marche/node = SubResource( 38 )
 states/Marche/position = Vector2( 540, 138 )
 transitions = [ "Idle", "Marche", SubResource( 39 ), "Marche", "Idle", SubResource( 40 ), "Attaque", "Idle", SubResource( 41 ), "Idle", "Attaque", SubResource( 42 ), "Dash", "Idle", SubResource( 43 ), "Idle", "Dash", SubResource( 44 ) ]
 start_node = "Idle"
-graph_offset = Vector2( -74, -28 )
+graph_offset = Vector2( -114, -38 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=46]
 
@@ -946,7 +946,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Attaque haut"
+animation = "Attaque Bas"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 46 )
@@ -980,7 +980,7 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Marche/blend_position = Vector2( 0, 0 )
 
 [node name="Position2D" type="Position2D" parent="."]
-rotation = 4.71239
+rotation = 1.5708
 
 [node name="BalaiHitBox" parent="Position2D" instance=ExtResource( 14 )]
 collision_mask = 8
@@ -997,7 +997,11 @@ collision_layer = 4
 [node name="CollisionShape2D" parent="HurtBoxe" index="0"]
 position = Vector2( 1, -2 )
 shape = SubResource( 48 )
+
+[node name="RecupEndu" type="Timer" parent="."]
+one_shot = true
 [connection signal="area_entered" from="HurtBoxe" to="." method="_on_HurtBoxe_area_entered"]
+[connection signal="timeout" from="RecupEndu" to="." method="_on_RecupEndu_timeout"]
 
 [editable path="Position2D/BalaiHitBox"]
 
