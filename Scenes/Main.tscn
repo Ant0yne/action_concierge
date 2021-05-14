@@ -1,16 +1,22 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Perso.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/DecorTest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/RH.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UIPersoVie.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Recherche environnement.png" type="Texture" id=5]
 
 [node name="Main" type="Node2D"]
+
+[node name="Fond" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 5 )
 
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Personnage" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 552.024, 349.891 )
+position = Vector2( 860.995, 355.689 )
+scale = Vector2( 0.7, 0.7 )
 
 [node name="DecorTest" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 763.607, 407.41 )
@@ -33,7 +39,7 @@ position = Vector2( 1135.61, 526.087 )
 position = Vector2( 380.423, 513.36 )
 
 [node name="RH6" parent="YSort/RH" instance=ExtResource( 3 )]
-position = Vector2( 296.985, 77.7818 )
+position = Vector2( 1215.02, 278.261 )
 
 [node name="RH7" parent="YSort/RH" instance=ExtResource( 3 )]
 position = Vector2( 750.947, 593.97 )
@@ -48,6 +54,7 @@ text = "Test"
 [node name="LimiteDecor" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LimiteDecor"]
-polygon = PoolVector2Array( 0.000991821, 0.103065, 14.0168, -0.230644, 14.1748, 700.553, 1261.87, 705.315, 1263.53, 75.7654, 14.5685, 72.3055, 14.8546, -0.153463, 1258.19, -27.5789, 1317.87, 2.03447, 1324.94, 765.71, -49, 763 )
+position = Vector2( 0, -1 )
+polygon = PoolVector2Array( 0.000991821, 0.103065, 52.9431, 125.877, 53.4953, 688.913, 846.108, 689.112, 846.185, 578.239, 882.125, 578.438, 882.193, 689.155, 1230.76, 689.237, 1229.29, 242.852, 1065.97, 124.992, 53.5301, 125.399, 13.31, -4.4347, 1258.19, -27.5789, 1317.87, 2.03447, 1324.94, 765.71, -49, 763 )
 
 [editable path="UIPersoVie"]
