@@ -1,6 +1,6 @@
 extends Node
 
-export var max_vie = int(2)
+export var max_vie = int(10)
 onready var vie = int(max_vie) setget _set_vie
 
 export var max_endu = int(100)

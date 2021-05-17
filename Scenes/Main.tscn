@@ -46,15 +46,20 @@ position = Vector2( 1215.02, 278.261 )
 position = Vector2( 750.947, 593.97 )
 
 [node name="UIPersoVie" parent="." instance=ExtResource( 4 )]
+margin_left = 29.685
+margin_top = 7.0
+margin_right = 29.6851
+margin_bottom = 7.0
 
 [node name="Label" parent="UIPersoVie" index="0"]
 margin_right = 195.0
 margin_bottom = 39.0
-text = "Test"
 
 [node name="UIPersoEndu" parent="." instance=ExtResource( 6 )]
-margin_left = 93.0
-margin_right = 93.0
+margin_left = 332.0
+margin_top = 4.0
+margin_right = 332.0
+margin_bottom = 4.0
 
 [node name="LimiteDecor" type="StaticBody2D" parent="."]
 

@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const ACCELERATION = int(500)
 const VIT_MAX = int(250)
+const VIT_MIN = float(0.2)
 const FRICTION = int(600)
 const VIT_DASH = int(1200)
 
@@ -31,6 +32,7 @@ var etat = MARCHE
 var velocite = Vector2.ZERO
 var dash_vecteur = Vector2.DOWN
 var endu_recup = bool(true)
+
 
 func _ready():
 	randomize()
@@ -70,7 +72,9 @@ func _marche_etat(delta):
 		animationState.travel("Marche")
 		if stats.endu < stats.max_endu && endu_recup == true :
 			stats.endu += ENDU_MARCHE
-		velocite = velocite.move_toward(input_vecteur * VIT_MAX, ACCELERATION * delta)
+		var ralentissement_endu = float(stats.endu) / float(stats.max_endu)
+		ralentissement_endu = clamp(ralentissement_endu + VIT_MIN, VIT_MIN, 1)
+		velocite = velocite.move_toward(input_vecteur * VIT_MAX  * ralentissement_endu, ACCELERATION * delta)
 	else:
 		animationState.travel("Idle")
 		if stats.endu < stats.max_endu && endu_recup == true :
@@ -80,14 +84,16 @@ func _marche_etat(delta):
 	_deplacement()
 
 	if Input.is_action_just_pressed("ui_dash"):
-		etat = DASH
-		stats.endu -= ENDU_DASH
-		_recup_endu(ENDU_LATENCE)
+		if stats.endu > 1:
+			etat = DASH
+			stats.endu -= ENDU_DASH
+			_recup_endu(ENDU_LATENCE)
 	
 	if Input.is_action_just_pressed("ui_attaque"):
-		etat = ATTAQUE
-		stats.endu -= ENDU_ATT
-		_recup_endu(ENDU_LATENCE)
+		if stats.endu > 1:
+			etat = ATTAQUE
+			stats.endu -= ENDU_ATT
+			_recup_endu(ENDU_LATENCE)
 	
 func _attaque_etat(delta):
 	velocite = Vector2.ZERO
@@ -118,9 +124,13 @@ func _on_HurtBoxe_area_entered(area):
 
 func _recup_endu(valeur):
 	endu_recup = false
-#	if timerEndu.is_stopped():
-#		print(valeur)
-#		timerEndu.start(valeur)
+	if timerEndu.is_stopped():
+		print(valeur)
+		timerEndu.start(valeur)
+	if valeur == stats.endu_vide:
+		timerEndu.stop()
+		timerEndu.start(valeur)
+		stats.endu = 1
 
 func _on_RecupEndu_timeout():
 	endu_recup = true
