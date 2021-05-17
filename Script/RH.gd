@@ -3,8 +3,8 @@ extends KinematicBody2D
 const RHEffetMort = preload("res://Scenes/RHEffetMort.tscn")
 
 const FORCE_RECUL = int(350)
-const ACCELERATION = int(100)
-const VIT_MAX = int(50)
+const ACCELERATION = int(300)
+const VIT_MAX = int(125)
 const FRICTION = int(600)
 const COLLISION = int(400)
 const MIN_TEMPS_DEAMBULE = int(1)

@@ -24,7 +24,7 @@ extents = Vector2( 9.99291, 6.01342 )
 extents = Vector2( 9.8712, 37.2865 )
 
 [sub_resource type="CircleShape2D" id=4]
-radius = 108.383
+radius = 227.71
 
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 6.50002, 24.106 )

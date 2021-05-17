@@ -8,7 +8,7 @@ const VIT_DASH = int(1200)
 
 const TPS_INVINCIBLE = int(2)
 
-const ENDU_DASH = int(75)
+const ENDU_DASH = int(25)
 const ENDU_ATT = int(10)
 const ENDU_MARCHE = int(1)
 const ENDU_IDLE = int(2)
