@@ -23,6 +23,7 @@ enum {
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+onready var animatedSprite = $AnimatedSprite
 onready var balaiHitbox = $Position2D/BalaiHitBox
 onready var stats = PersoStats
 onready var hurtBox = $HurtBoxe
@@ -38,6 +39,7 @@ func _ready():
 	randomize()
 	stats.connect("vie_zero", self, "queue_free")
 	stats.connect("endu_zero", self, "_recup_endu")
+	animatedSprite.playing = true
 	animationTree.active = true
 	balaiHitbox.recul_vecteur = dash_vecteur
 	animationTree.set("parameters/Idle/blend_position", Vector2.DOWN)
