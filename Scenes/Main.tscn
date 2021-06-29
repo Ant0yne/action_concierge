@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Perso.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/DecorTest.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/RH.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/UIPersoVie.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Recherche environnement.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/UIPersoEndu.tscn" type="PackedScene" id=6]
@@ -23,27 +22,6 @@ scale = Vector2( 0.7, 0.7 )
 position = Vector2( 763.607, 407.41 )
 
 [node name="RH" type="YSort" parent="YSort"]
-
-[node name="RH" parent="YSort/RH" instance=ExtResource( 3 )]
-position = Vector2( 347.777, 240.298 )
-
-[node name="RH2" parent="YSort/RH" instance=ExtResource( 3 )]
-position = Vector2( 627.791, 154.031 )
-
-[node name="RH3" parent="YSort/RH" instance=ExtResource( 3 )]
-position = Vector2( 974.393, 152.735 )
-
-[node name="RH4" parent="YSort/RH" instance=ExtResource( 3 )]
-position = Vector2( 1135.61, 526.087 )
-
-[node name="RH5" parent="YSort/RH" instance=ExtResource( 3 )]
-position = Vector2( 380.423, 513.36 )
-
-[node name="RH6" parent="YSort/RH" instance=ExtResource( 3 )]
-position = Vector2( 1215.02, 278.261 )
-
-[node name="RH7" parent="YSort/RH" instance=ExtResource( 3 )]
-position = Vector2( 750.947, 593.97 )
 
 [node name="UIPersoVie" parent="." instance=ExtResource( 4 )]
 margin_left = 29.685
