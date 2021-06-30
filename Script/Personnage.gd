@@ -47,7 +47,7 @@ func _ready():
 	animationTree.set("parameters/Dash/blend_position", Vector2.DOWN)
 
 func _physics_process(delta):
-	print(timerEndu.time_left)
+#	print(timerEndu.time_left)
 	match etat:
 		MARCHE:
 			_marche_etat(delta)
@@ -127,7 +127,7 @@ func _on_HurtBoxe_area_entered(area):
 func _recup_endu(valeur):
 	endu_recup = false
 	if timerEndu.is_stopped():
-		print(valeur)
+#		print(valeur)
 		timerEndu.start(valeur)
 	if valeur == stats.endu_vide:
 		timerEndu.stop()
