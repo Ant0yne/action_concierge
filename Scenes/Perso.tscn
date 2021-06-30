@@ -1036,7 +1036,8 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Idle Bas"
+animation = "Attaque Bas"
+offset = Vector2( -5, -15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 46 )
@@ -1070,14 +1071,14 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Marche/blend_position = Vector2( 0, 0 )
 
 [node name="Position2D" type="Position2D" parent="."]
-rotation = 3.14159
+rotation = 1.5708
 
 [node name="BalaiHitBox" parent="Position2D" instance=ExtResource( 14 )]
 collision_mask = 8
 script = ExtResource( 19 )
 
 [node name="CollisionShape2D" parent="Position2D/BalaiHitBox" index="0"]
-position = Vector2( 27, 0 )
+position = Vector2( 62, 0 )
 shape = SubResource( 47 )
 disabled = true
 
