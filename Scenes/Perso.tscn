@@ -95,14 +95,14 @@ animations = [ {
 "name": "New Anim",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 81 ), ExtResource( 18 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 82 ) ],
-"loop": false,
-"name": "Attaque Gauche",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
-"name": "Dash Haut",
+"name": "Attaque Droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "Dash Droite",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -110,34 +110,14 @@ animations = [ {
 "name": "Attaque haut",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 8 ), ExtResource( 70 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 68 ), ExtResource( 71 ) ],
+"frames": [ ExtResource( 74 ), ExtResource( 7 ), ExtResource( 80 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 79 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ) ],
 "loop": true,
-"name": "Marche Gauche",
-"speed": 12.0
+"name": "Marche Bas",
+"speed": 15.0
 }, {
-"frames": [ ExtResource( 16 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
-"name": "Marche Droite",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "Attaque Droite",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 15 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 52 ) ],
-"loop": true,
-"name": "Idle Gauche",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "Idle Droite",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "Dash Gauche",
+"name": "Dash Haut",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -145,34 +125,54 @@ animations = [ {
 "name": "Dash Bas",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "Marche Haut",
-"speed": 5.0
+"frames": [ ExtResource( 4 ), ExtResource( 86 ), ExtResource( 85 ), ExtResource( 87 ) ],
+"loop": false,
+"name": "Attaque Bas",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 22 ), ExtResource( 1 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
 "loop": true,
 "name": "Idle Bas",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 74 ), ExtResource( 7 ), ExtResource( 80 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 79 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ) ],
+"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 15 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 52 ) ],
 "loop": true,
-"name": "Marche Bas",
-"speed": 15.0
+"name": "Idle Gauche",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 57 ), ExtResource( 62 ), ExtResource( 58 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 59 ), ExtResource( 5 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 64 ) ],
 "loop": true,
 "name": "Idle Haut",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "Dash Droite",
+"name": "Marche Haut",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 86 ), ExtResource( 85 ), ExtResource( 87 ) ],
+"frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 8 ), ExtResource( 70 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 68 ), ExtResource( 71 ) ],
+"loop": true,
+"name": "Marche Gauche",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "Dash Gauche",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "Idle Droite",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "Marche Droite",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 18 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 82 ) ],
 "loop": false,
-"name": "Attaque Bas",
+"name": "Attaque Gauche",
 "speed": 12.0
 } ]
 
@@ -690,6 +690,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ "Idle Bas" ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Position2D/BalaiHitBox/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=12]
 length = 0.92
@@ -1024,8 +1036,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Marche Gauche"
-offset = Vector2( -4, 0 )
+animation = "Idle Bas"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 46 )
@@ -1059,7 +1070,6 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Marche/blend_position = Vector2( 0, 0 )
 
 [node name="Position2D" type="Position2D" parent="."]
-rotation = 3.14159
 
 [node name="BalaiHitBox" parent="Position2D" instance=ExtResource( 14 )]
 collision_mask = 8
@@ -1068,6 +1078,7 @@ script = ExtResource( 19 )
 [node name="CollisionShape2D" parent="Position2D/BalaiHitBox" index="0"]
 position = Vector2( 27, 0 )
 shape = SubResource( 47 )
+disabled = true
 
 [node name="HurtBoxe" parent="." instance=ExtResource( 20 )]
 collision_layer = 4
