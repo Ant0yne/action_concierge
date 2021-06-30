@@ -7,10 +7,8 @@ var nbre_rh = int(6)
 var ajout_nbre_rh = int(3)
 var nbre_vague = int(1)
 
-
 func _ready():
 	_random_position()
-	
 
 func _process(delta):
 	if Input.is_action_just_released("ui_select"):
