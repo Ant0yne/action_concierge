@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Script/UIPersoVie.gd" type="Script" id=1]
 [ext_resource path="res://Font/arialbd.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/Fond Barre Vie.png" type="Texture" id=3]
+[ext_resource path="res://UI/Barre Vie.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 35
@@ -16,11 +18,20 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 8.81944
+margin_top = 27.0883
+margin_right = 60.8194
+margin_bottom = 67.0883
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.796078, 0.105882, 0.105882, 1 )
 text = "Vie"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_right = 204.0
+margin_bottom = 25.0
+value = 30.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )

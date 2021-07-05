@@ -40,15 +40,15 @@ margin_right = 195.0
 margin_bottom = 39.0
 
 [node name="UIPersoEndu" parent="." instance=ExtResource( 6 )]
-margin_left = 332.0
-margin_top = 4.0
-margin_right = 332.0
-margin_bottom = 4.0
+margin_left = 783.0
+margin_top = 20.0
+margin_right = 783.0
+margin_bottom = 20.0
 
 [node name="LimiteDecor" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LimiteDecor"]
-position = Vector2( 0, -1 )
+position = Vector2( 0, -2 )
 polygon = PoolVector2Array( 0.000991821, 0.103065, 52.9431, 125.877, 53.4953, 688.913, 846.108, 689.112, 846.185, 578.239, 882.125, 578.438, 882.193, 689.155, 1230.76, 689.237, 1229.6, 271.254, 1082.55, 125.997, 53.5301, 125.399, 13.31, -4.4347, 1258.19, -27.5789, 1317.87, 2.03447, 1324.94, 765.71, -49, 763 )
 
 [editable path="UIPersoVie"]
