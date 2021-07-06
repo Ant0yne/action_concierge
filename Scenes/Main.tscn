@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/DecorTest.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Script/GestionRH.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/UIPersoVie.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Recherche environnement_v2.png" type="Texture" id=5]
+[ext_resource path="res://Recherche environnement_v3.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/UIPersoEndu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Cercle.tscn" type="PackedScene" id=7]
 
@@ -13,6 +13,22 @@
 [node name="Fond" type="Sprite" parent="."]
 position = Vector2( 640, 360 )
 texture = ExtResource( 5 )
+
+[node name="UIPersoVie" parent="." instance=ExtResource( 4 )]
+margin_left = 213.0
+margin_top = 29.0
+margin_right = 213.0
+margin_bottom = 29.0
+
+[node name="Label" parent="UIPersoVie" index="1"]
+margin_right = 195.0
+margin_bottom = 39.0
+
+[node name="UIPersoEndu" parent="." instance=ExtResource( 6 )]
+margin_left = 780.0
+margin_top = 28.0
+margin_right = 780.0
+margin_bottom = 28.0
 
 [node name="Cercle" parent="." instance=ExtResource( 7 )]
 position = Vector2( 646, 418 )
@@ -28,22 +44,6 @@ position = Vector2( 349.676, 267.547 )
 
 [node name="RH" type="YSort" parent="YSort"]
 script = ExtResource( 3 )
-
-[node name="UIPersoVie" parent="." instance=ExtResource( 4 )]
-margin_left = 29.685
-margin_top = 7.0
-margin_right = 29.6851
-margin_bottom = 7.0
-
-[node name="Label" parent="UIPersoVie" index="0"]
-margin_right = 195.0
-margin_bottom = 39.0
-
-[node name="UIPersoEndu" parent="." instance=ExtResource( 6 )]
-margin_left = 783.0
-margin_top = 20.0
-margin_right = 783.0
-margin_bottom = 20.0
 
 [node name="LimiteDecor" type="StaticBody2D" parent="."]
 

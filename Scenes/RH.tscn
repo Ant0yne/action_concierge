@@ -50,7 +50,7 @@ collision_layer = 8
 shape = SubResource( 3 )
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
-max_vie = 1
+max_vie = 3
 
 [node name="DetectionPerso" parent="." instance=ExtResource( 5 )]
 
