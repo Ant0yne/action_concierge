@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Script/UIPersoEndu.gd" type="Script" id=1]
-[ext_resource path="res://Font/arialbd.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Font/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://UI/Fond Barre Endu.png" type="Texture" id=3]
+[ext_resource path="res://UI/Barre Endu.png" type="Texture" id=4]
+[ext_resource path="res://UI/Fond Barres.png" type="Texture" id=5]
+[ext_resource path="res://UI/Poumon.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 35
+size = 19
 font_data = ExtResource( 2 )
 
 [node name="UIPersoEndu" type="Control"]
@@ -15,12 +19,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="Fond" type="TextureRect" parent="."]
 margin_right = 40.0
-margin_bottom = 14.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 0.141176, 0.627451, 0.188235, 1 )
-text = "Endu"
+margin_bottom = 40.0
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="."]
+margin_left = 133.0
+margin_top = 52.0
+margin_right = 177.0
+margin_bottom = 69.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.141176, 0.627451, 0.188235, 1 )
+text = "100%"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="."]
+margin_left = 51.0
+margin_top = 28.0
+margin_right = 185.0
+margin_bottom = 49.0
+max_value = 200.0
+value = 90.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Poumon" type="TextureRect" parent="."]
+margin_left = 114.459
+margin_top = 50.6935
+margin_right = 132.459
+margin_bottom = 68.6935
+texture = ExtResource( 6 )

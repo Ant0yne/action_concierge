@@ -1,0 +1,23 @@
+[gd_scene format=2]
+
+[node name="Credit" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 651.0
+margin_bottom = 521.0
+text = "Musique :
+m4nud3v (3EHNT)
+
+Plugin de dialogue :
+Dialogic - Emilio Coppola
+
+Remerciement :
+Chat
+HeartBeast pour son tuto \"Godot Action RPG Series\"
+
+Font :
+VCR OSD Mono - Riciery Leal
+"

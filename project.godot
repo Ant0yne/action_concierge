@@ -22,7 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 PersoStats="*res://Scenes/PersoStats.tscn"
-CercleDonnees="*res://Scenes/CercleDonnees.gd"
+CercleDonnees="*res://Script/CercleDonnees.gd"
 
 [display]
 

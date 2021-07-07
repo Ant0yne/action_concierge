@@ -22,7 +22,8 @@
 [ext_resource path="res://Cercle/cercle_detruit_2.png" type="Texture" id=20]
 [ext_resource path="res://Cercle/cercle_detruit_3-v2.png" type="Texture" id=21]
 [ext_resource path="res://Cercle/cercle_rempli.png" type="Texture" id=22]
-[ext_resource path="res://Scenes/Cercle.gd" type="Script" id=23]
+[ext_resource path="res://Script/Cercle.gd" type="Script" id=23]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

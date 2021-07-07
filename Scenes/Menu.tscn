@@ -12,6 +12,19 @@ margin_left = 269.695
 margin_top = 549.879
 margin_right = 333.695
 margin_bottom = 613.879
+focus_neighbour_right = NodePath("../Credit")
+texture_normal = ExtResource( 2 )
+texture_focused = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credit" type="TextureButton" parent="."]
+margin_left = 597.825
+margin_top = 543.885
+margin_right = 661.825
+margin_bottom = 607.885
+focus_neighbour_left = NodePath("../Jouer")
 focus_neighbour_right = NodePath("../Quitter")
 texture_normal = ExtResource( 2 )
 texture_focused = ExtResource( 3 )
@@ -21,14 +34,15 @@ __meta__ = {
 
 [node name="Quitter" type="TextureButton" parent="."]
 margin_left = 904.977
-margin_top = 545.384
+margin_top = 542.696
 margin_right = 968.977
-margin_bottom = 609.384
-focus_neighbour_left = NodePath("../Jouer")
+margin_bottom = 606.696
+focus_neighbour_left = NodePath("../Credit")
 texture_normal = ExtResource( 2 )
 texture_focused = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_up" from="Jouer" to="." method="_on_Jouer_button_up"]
+[connection signal="button_up" from="Credit" to="." method="_on_TextureButton_button_up"]
 [connection signal="button_up" from="Quitter" to="." method="_on_Quitter_button_up"]
