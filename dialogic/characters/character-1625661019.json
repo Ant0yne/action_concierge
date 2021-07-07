@@ -1,0 +1,20 @@
+{
+	"color": "#ffa41804",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": true,
+	"id": "character-1625661019.json",
+	"mirror_portraits": false,
+	"name": "PersoPrincipal",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Cinematique/Intro/PersoIntro_v2.png"
+		}
+	],
+	"scale": 100
+}

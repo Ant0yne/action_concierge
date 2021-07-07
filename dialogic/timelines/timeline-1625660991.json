@@ -1,0 +1,125 @@
+{
+	"events": [
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1625661859.cfg"
+		},
+		{
+			"action": "join",
+			"character": "character-1625661019.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1625661019.json",
+			"event_id": "dialogic_001",
+			"portrait": "Default",
+			"text": "Bonjour monsieur, vous m'avez appelé ?"
+		},
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1625663052.cfg"
+		},
+		{
+			"action": "join",
+			"character": "character-1625661093.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1625661093.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ah oui ! En effet ! Je vais avoir besoin de toi. Ce travail demande des compétences que je n'ai pas, tu comprends ?"
+		},
+		{
+			"character": "character-1625661093.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "L'important c'est de bien visualiser ses points forts et ses points faibles, les optimiser."
+		},
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1625661859.cfg"
+		},
+		{
+			"character": "character-1625661019.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Qu'est-ce que je peux faire pour vous ?"
+		},
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1625663052.cfg"
+		},
+		{
+			"character": "character-1625661093.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Il va falloir nettoyer la salle de conférence. Une partie de l'équipe sort d'un séminaire qui a pas tenu ses objectifs prévisionels et c'est un peu le bordel."
+		},
+		{
+			"character": "character-1625661093.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Enfin tu connais les bails, c'est ton domaine d'espertise."
+		},
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1625661859.cfg"
+		},
+		{
+			"character": "character-1625661019.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Je dois vous avouer que je ne sais pas si j'en suis capable, la dernière fois j'ai dû poser ma semaine de congée pour m'en remettre."
+		},
+		{
+			"character": "character-1625661019.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Je commence à me faire vraiment vieille"
+		},
+		{
+			"event_id": "dialogic_024",
+			"set_theme": "theme-1625663052.cfg"
+		},
+		{
+			"character": "character-1625661093.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ah oui je comprends bien. Après il y a que toi pour le faire. T'es une professionnelle, je suis sûr que tu vas y arriver."
+		},
+		{
+			"character": "character-1625661093.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Tu sais, il y a beaucoup de gens qui te diront que c'est faux, mais quand on veut, on peut hein."
+		},
+		{
+			"change_scene": "res://Scenes/Main.tscn",
+			"event_id": "dialogic_041"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.2.4",
+		"file": "timeline-1625660991.json",
+		"name": "Intro"
+	}
+}
