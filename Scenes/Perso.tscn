@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=2]
+[gd_scene load_steps=157 format=2]
 
 [ext_resource path="res://Perso/Idle/Idle Bas/perso_idle_bas0001.png" type="Texture" id=1]
 [ext_resource path="res://Script/Personnage.gd" type="Script" id=2]
@@ -6,17 +6,16 @@
 [ext_resource path="res://Perso/Attaque/Attaque Bas/perso_attaque_bas0000.png" type="Texture" id=4]
 [ext_resource path="res://Perso/Idle/Idle Haut/perso_idle_haut0006.png" type="Texture" id=5]
 [ext_resource path="res://Perso/Dash/perso_dash_bas.png" type="Texture" id=6]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0001.png" type="Texture" id=7]
+[ext_resource path="res://Perso/Marche/Marche Haut/perso_marche_haut0006.png" type="Texture" id=7]
 [ext_resource path="res://Perso/Marche/Marche Gauche/perso_marche_gauche0002.png" type="Texture" id=8]
-[ext_resource path="res://Perso/Attaque/perso_attaque_haut.png" type="Texture" id=9]
-[ext_resource path="res://Perso/Attaque/perso_attaque_droite.png" type="Texture" id=10]
+[ext_resource path="res://Perso/Attaque/Attaque Haut/perso_attaque_haut0002.png" type="Texture" id=9]
 [ext_resource path="res://Perso/Dash/perso_dash_gauche.png" type="Texture" id=11]
 [ext_resource path="res://Perso/Dash/perso_dash_haut.png" type="Texture" id=12]
 [ext_resource path="res://Perso/Idle/Idle Droite/perso_idle_droite0000.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/HitBox.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Perso/Idle/Idle Gauche/perso_idle_gauche0003.png" type="Texture" id=15]
-[ext_resource path="res://Perso/Marche/perso_marche_droite.png" type="Texture" id=16]
-[ext_resource path="res://Perso/Marche/perso_marche_haut.png" type="Texture" id=17]
+[ext_resource path="res://Perso/Marche/Marche Droite/perso_marche_droite0002.png" type="Texture" id=16]
+[ext_resource path="res://Perso/Marche/Marche Haut/perso_marche_haut0007.png" type="Texture" id=17]
 [ext_resource path="res://Perso/Attaque/Attaque Gauche/perso_attaque_gauche0003.png" type="Texture" id=18]
 [ext_resource path="res://Script/BalaiHitbox.gd" type="Script" id=19]
 [ext_resource path="res://Scenes/HurtBox.tscn" type="PackedScene" id=20]
@@ -71,15 +70,15 @@
 [ext_resource path="res://Perso/Marche/Marche Gauche/perso_marche_gauche0005.png" type="Texture" id=69]
 [ext_resource path="res://Perso/Marche/Marche Gauche/perso_marche_gauche0003.png" type="Texture" id=70]
 [ext_resource path="res://Perso/Marche/Marche Gauche/perso_marche_gauche0007.png" type="Texture" id=71]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0004.png" type="Texture" id=72]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0003.png" type="Texture" id=73]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0000.png" type="Texture" id=74]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0006.png" type="Texture" id=75]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0007.png" type="Texture" id=76]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0008.png" type="Texture" id=77]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0009.png" type="Texture" id=78]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0005.png" type="Texture" id=79]
-[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_gauche0002.png" type="Texture" id=80]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0000.png" type="Texture" id=72]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0002.png" type="Texture" id=73]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0001.png" type="Texture" id=74]
+[ext_resource path="res://Perso/Marche/Marche Haut/perso_marche_haut0001.png" type="Texture" id=75]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0004.png" type="Texture" id=76]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0003.png" type="Texture" id=77]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0007.png" type="Texture" id=78]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0008.png" type="Texture" id=79]
+[ext_resource path="res://Perso/Marche/Marche Haut/perso_marche_haut0000.png" type="Texture" id=80]
 [ext_resource path="res://Perso/Attaque/Attaque Gauche/perso_attaque_gauche0002.png" type="Texture" id=81]
 [ext_resource path="res://Perso/Attaque/Attaque Gauche/perso_attaque_gauche0006.png" type="Texture" id=82]
 [ext_resource path="res://Perso/Attaque/Attaque Gauche/perso_attaque_gauche0004.png" type="Texture" id=83]
@@ -87,33 +86,90 @@
 [ext_resource path="res://Perso/Attaque/Attaque Bas/perso_attaque_bas0002.png" type="Texture" id=85]
 [ext_resource path="res://Perso/Attaque/Attaque Bas/perso_attaque_bas0001.png" type="Texture" id=86]
 [ext_resource path="res://Perso/Attaque/Attaque Bas/perso_attaque_bas0003.png" type="Texture" id=87]
+[ext_resource path="res://Perso/Marche/Marche Haut/perso_marche_haut0002.png" type="Texture" id=88]
+[ext_resource path="res://Perso/Marche/Marche Haut/perso_marche_haut0003.png" type="Texture" id=89]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0009.png" type="Texture" id=90]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0005.png" type="Texture" id=91]
+[ext_resource path="res://Perso/Marche/Marche Bas/perso_marche_bas0006.png" type="Texture" id=92]
+[ext_resource path="res://Perso/Marche/Marche Haut/perso_marche_haut0004.png" type="Texture" id=93]
+[ext_resource path="res://Perso/Marche/Marche Haut/perso_marche_haut0005.png" type="Texture" id=94]
+[ext_resource path="res://Perso/Attaque/Attaque Haut/perso_attaque_haut0001.png" type="Texture" id=95]
+[ext_resource path="res://Perso/Attaque/Attaque Droite/perso_attaque_droite0004.png" type="Texture" id=96]
+[ext_resource path="res://Perso/Attaque/Attaque Droite/perso_attaque_droite0001.png" type="Texture" id=97]
+[ext_resource path="res://Perso/Attaque/Attaque Droite/perso_attaque_droite0005.png" type="Texture" id=98]
+[ext_resource path="res://Perso/Attaque/Attaque Haut/perso_attaque_haut0000.png" type="Texture" id=99]
+[ext_resource path="res://Perso/Attaque/Attaque Haut/perso_attaque_haut0003.png" type="Texture" id=100]
+[ext_resource path="res://Perso/Attaque/Attaque Droite/perso_attaque_droite0002.png" type="Texture" id=101]
+[ext_resource path="res://Perso/Attaque/Attaque Droite/perso_attaque_droite0003.png" type="Texture" id=102]
+[ext_resource path="res://Perso/Marche/Marche Droite/perso_marche_droite0003.png" type="Texture" id=103]
+[ext_resource path="res://Perso/Marche/Marche Droite/perso_marche_droite0005.png" type="Texture" id=104]
+[ext_resource path="res://Perso/Marche/Marche Droite/perso_marche_droite0000.png" type="Texture" id=105]
+[ext_resource path="res://Perso/Marche/Marche Droite/perso_marche_droite0004.png" type="Texture" id=106]
+[ext_resource path="res://Perso/Marche/Marche Droite/perso_marche_droite0006.png" type="Texture" id=107]
+[ext_resource path="res://Perso/Marche/Marche Droite/perso_marche_droite0007.png" type="Texture" id=108]
+[ext_resource path="res://Perso/Marche/Marche Droite/perso_marche_droite0001.png" type="Texture" id=109]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 105 ), ExtResource( 109 ), ExtResource( 16 ), ExtResource( 103 ), ExtResource( 106 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 108 ) ],
 "loop": true,
-"name": "New Anim",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "Attaque Droite",
-"speed": 5.0
+"name": "Marche Droite",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "Dash Droite",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 57 ), ExtResource( 62 ), ExtResource( 58 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 59 ), ExtResource( 5 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 64 ) ],
+"loop": true,
+"name": "Idle Haut",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 99 ), ExtResource( 95 ), ExtResource( 9 ), ExtResource( 100 ) ],
 "loop": true,
 "name": "Attaque haut",
-"speed": 5.0
+"speed": 12.0
 }, {
-"frames": [ ExtResource( 74 ), ExtResource( 7 ), ExtResource( 80 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 79 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ) ],
+"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 15 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "Idle Gauche",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 1 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "Idle Bas",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 80 ), ExtResource( 75 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 7 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "Marche Haut",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 8 ), ExtResource( 70 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 68 ), ExtResource( 71 ) ],
+"loop": true,
+"name": "Marche Gauche",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 81 ), ExtResource( 18 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 82 ) ],
+"loop": false,
+"name": "Attaque Gauche",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 97 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 96 ), ExtResource( 98 ) ],
+"loop": true,
+"name": "Attaque Droite",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 72 ), ExtResource( 74 ), ExtResource( 73 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 90 ) ],
 "loop": true,
 "name": "Marche Bas",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "Idle Droite",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
@@ -130,50 +186,15 @@ animations = [ {
 "name": "Attaque Bas",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 1 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 21 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ],
-"loop": true,
-"name": "Idle Bas",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 44 ), ExtResource( 15 ), ExtResource( 45 ), ExtResource( 43 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 51 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 52 ) ],
-"loop": true,
-"name": "Idle Gauche",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 57 ), ExtResource( 62 ), ExtResource( 58 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 59 ), ExtResource( 5 ), ExtResource( 61 ), ExtResource( 56 ), ExtResource( 60 ), ExtResource( 63 ), ExtResource( 64 ) ],
-"loop": true,
-"name": "Idle Haut",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "Marche Haut",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 65 ), ExtResource( 66 ), ExtResource( 8 ), ExtResource( 70 ), ExtResource( 67 ), ExtResource( 69 ), ExtResource( 68 ), ExtResource( 71 ) ],
-"loop": true,
-"name": "Marche Gauche",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 11 ) ],
 "loop": true,
 "name": "Dash Gauche",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 41 ) ],
+"frames": [  ],
 "loop": true,
-"name": "Idle Droite",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "Marche Droite",
+"name": "New Anim",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 81 ), ExtResource( 18 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 82 ) ],
-"loop": false,
-"name": "Attaque Gauche",
-"speed": 12.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -258,8 +279,8 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id=4]
-length = 0.2
-step = 0.05
+length = 0.42
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -279,7 +300,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 0.42 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -308,7 +329,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -4, -23 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Position2D/BalaiHitBox/CollisionShape2D:disabled")
@@ -414,8 +435,8 @@ tracks/5/keys = {
 }
 
 [sub_resource type="Animation" id=6]
-length = 0.2
-step = 0.05
+length = 0.34
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:animation")
 tracks/0/interp = 1
@@ -435,7 +456,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.2 ),
+"times": PoolRealArray( 0.34 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -464,7 +485,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -7, -2 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Position2D/BalaiHitBox/CollisionShape2D:disabled")
@@ -800,7 +821,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -2, 10 ) ]
+"values": [ Vector2( -2, 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSprite:animation")
@@ -816,6 +837,7 @@ tracks/1/keys = {
 }
 
 [sub_resource type="Animation" id=16]
+length = 0.58
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("AnimatedSprite:offset")
@@ -827,7 +849,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -9, -10 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSprite:animation")
@@ -855,7 +877,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -4, 0 ) ]
+"values": [ Vector2( 9, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSprite:animation")
@@ -882,7 +904,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( -4, 7 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSprite:animation")
@@ -1036,8 +1058,8 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Attaque Bas"
-offset = Vector2( -5, -15 )
+animation = "Marche Haut"
+offset = Vector2( -4, 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 46 )
@@ -1071,7 +1093,7 @@ parameters/Idle/blend_position = Vector2( 0, 0 )
 parameters/Marche/blend_position = Vector2( 0, 0 )
 
 [node name="Position2D" type="Position2D" parent="."]
-rotation = 1.5708
+rotation = 4.71239
 
 [node name="BalaiHitBox" parent="Position2D" instance=ExtResource( 14 )]
 collision_mask = 8
