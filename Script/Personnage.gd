@@ -31,7 +31,7 @@ onready var stats = PersoStats
 onready var hurtBox = $HurtBoxe
 onready var timerEndu = $RecupEndu
 onready var limiteDegat = $LimiteDegat
-onready var camera = $Camera2D
+onready var gestionRH = CercleDonnees
 
 var etat = MARCHE
 var velocite = Vector2.ZERO
@@ -50,8 +50,8 @@ func _ready():
 	animationTree.set("parameters/Dash/blend_position", Vector2.DOWN)
 
 func _physics_process(delta):
-	if Input.is_action_just_released("ui_accept"):
-		_mort_etat()
+#	if Input.is_action_just_released("ui_accept"):
+#		_mort_etat()
 	match etat:
 		MARCHE:
 			_marche_etat(delta)
@@ -150,9 +150,10 @@ func _on_RecupEndu_timeout():
 	
 func _mort_etat():
 	etat = MORT
+	gestionRH.game_over = true
+	stats.position_perso = global_position
+	stats.mort = true
 	animationState.travel("Mort")
-	var vecteur_zoom = Vector2(0.5,0.5)
-	camera.set_zoom(vecteur_zoom)
 	
 func _animation_mort_terminee():
 		get_tree().change_scene("res://Scenes/Menu.tscn")

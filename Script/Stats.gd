@@ -7,6 +7,9 @@ export var max_endu = int(100)
 export var endu_vide = int(5)
 onready var endu = int(max_endu) setget _set_endu
 
+var mort = bool(false)
+var position_perso
+
 signal vie_zero
 signal changement_vie(valeur)
 
