@@ -1,11 +1,12 @@
 extends KinematicBody2D
 
-const ACCELERATION = int(500)
+const ACCELERATION = int(850)
 const VIT_MAX = int(250)
 const VIT_MIN = float(0.2)
-const FRICTION = int(600)
+const FRICTION = int(1200)
 const VIT_DASH = int(1200)
 
+const DEGATS = int(1)
 const TPS_INVINCIBLE = int(2)
 
 const ENDU_DASH = int(25)
@@ -17,7 +18,8 @@ const ENDU_LATENCE = int(2)
 enum {
 	MARCHE,
 	DASH,
-	ATTAQUE
+	ATTAQUE,
+	MORT
 }
 
 onready var animationPlayer = $AnimationPlayer
@@ -28,16 +30,18 @@ onready var balaiHitbox = $Position2D/BalaiHitBox
 onready var stats = PersoStats
 onready var hurtBox = $HurtBoxe
 onready var timerEndu = $RecupEndu
+onready var limiteDegat = $LimiteDegat
+onready var gestionRH = CercleDonnees
 
 var etat = MARCHE
 var velocite = Vector2.ZERO
 var dash_vecteur = Vector2.DOWN
 var endu_recup = bool(true)
 
-
 func _ready():
+	gestionRH.game_over = false
 	randomize()
-	stats.connect("vie_zero", self, "queue_free")
+	stats.connect("vie_zero", self, "_mort_etat")
 	stats.connect("endu_zero", self, "_recup_endu")
 	animatedSprite.playing = true
 	animationTree.active = true
@@ -47,7 +51,8 @@ func _ready():
 	animationTree.set("parameters/Dash/blend_position", Vector2.DOWN)
 
 func _physics_process(delta):
-#	print(timerEndu.time_left)
+#	if Input.is_action_just_released("ui_accept"):
+#		_mort_etat()
 	match etat:
 		MARCHE:
 			_marche_etat(delta)
@@ -57,6 +62,9 @@ func _physics_process(delta):
 			
 		ATTAQUE:
 			_attaque_etat(delta)
+			
+		MORT:
+			pass
 
 func _marche_etat(delta):
 	var input_vecteur = Vector2.ZERO
@@ -120,9 +128,13 @@ func _deplacement():
 	velocite = move_and_slide(velocite)
 
 func _on_HurtBoxe_area_entered(area):
-	stats.vie -= 1
-	hurtBox._start_invincible(TPS_INVINCIBLE)
-	hurtBox._creer_effet_touche()
+		hurtBox._start_invincible(TPS_INVINCIBLE)
+		limiteDegat.start(0.1)
+
+func _on_LimiteDegat_timeout():
+	limiteDegat.stop()
+	stats.vie -= DEGATS
+#	hurtBox._creer_effet_touche()
 
 func _recup_endu(valeur):
 	endu_recup = false
@@ -136,3 +148,13 @@ func _recup_endu(valeur):
 
 func _on_RecupEndu_timeout():
 	endu_recup = true
+	
+func _mort_etat():
+	animationState.travel("Mort")
+	etat = MORT
+	gestionRH.game_over = true
+	stats.position_perso = global_position
+	stats.mort = true
+	
+func _animation_mort_terminee():
+		get_tree().change_scene("res://Scenes/Menu.tscn")

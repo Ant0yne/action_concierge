@@ -37,7 +37,7 @@ func _on_Cercle_animation_finished():
 		play()
 		cercleDonnee.eclairage_joue = true
 	
-	if animation == "Eclairage" && cercleDonnee.nbre_vague == 0:
+	if animation == "Eclairage" && cercleDonnee.nbre_vague == 1:
 		set_animation("Idle Rempli")
 		play()
 		

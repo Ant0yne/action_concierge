@@ -4,6 +4,7 @@ const RHEffetTouche = preload("res://Scenes/RHEffetTouche.tscn")
 
 onready var timer = $Timer
 onready var collisionShape2D = $CollisionShape2D
+onready var persoStat = PersoStats
 
 #var invincible = bool(false) setget _set_invincible
 

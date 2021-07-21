@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/Perso.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/DecorTest.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Recherche environnement_v3.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/UIPersoEndu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Cercle.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Script/Camera2D.gd" type="Script" id=8]
 
 [node name="Main" type="Node2D"]
 
@@ -38,6 +39,15 @@ position = Vector2( 646, 418 )
 [node name="Personnage" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 646.984, 105.656 )
 scale = Vector2( 0.7, 0.7 )
+
+[node name="Camera2D" type="Camera2D" parent="YSort/Personnage"]
+position = Vector2( -924.263, -150.937 )
+scale = Vector2( 1.42857, 1.42857 )
+drag_margin_left = 1.0
+drag_margin_top = 1.0
+drag_margin_right = 1.0
+drag_margin_bottom = 1.0
+script = ExtResource( 8 )
 
 [node name="DecorTest" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 349.676, 267.547 )
