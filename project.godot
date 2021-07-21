@@ -65,6 +65,10 @@ window/stretch/aspect="keep"
 
 enabled=PoolStringArray( "dialogic" )
 
+[global]
+
+bg_color=false
+
 [importer_defaults]
 
 texture={
@@ -129,6 +133,11 @@ ui_attaque={
 "events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":2,"pressure":0.0,"pressed":false,"script":null)
  ]
 }
+ui_passer={
+"deadzone": 0.5,
+"events": [ Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":11,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
 
 [layer_names]
 
@@ -143,5 +152,4 @@ ui_attaque={
 [rendering]
 
 quality/2d/use_pixel_snap=true
-environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

@@ -2,7 +2,7 @@ extends Camera2D
 
 onready var perso = PersoStats
 
-var valeur_zoom = Vector2(0.3,0.3)
+var valeur_zoom = Vector2(0.7,0.7)
 
 func _ready():
 	clear_current()

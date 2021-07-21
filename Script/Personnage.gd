@@ -39,6 +39,7 @@ var dash_vecteur = Vector2.DOWN
 var endu_recup = bool(true)
 
 func _ready():
+	gestionRH.game_over = false
 	randomize()
 	stats.connect("vie_zero", self, "_mort_etat")
 	stats.connect("endu_zero", self, "_recup_endu")
@@ -133,7 +134,7 @@ func _on_HurtBoxe_area_entered(area):
 func _on_LimiteDegat_timeout():
 	limiteDegat.stop()
 	stats.vie -= DEGATS
-	hurtBox._creer_effet_touche()
+#	hurtBox._creer_effet_touche()
 
 func _recup_endu(valeur):
 	endu_recup = false
@@ -149,11 +150,11 @@ func _on_RecupEndu_timeout():
 	endu_recup = true
 	
 func _mort_etat():
+	animationState.travel("Mort")
 	etat = MORT
 	gestionRH.game_over = true
 	stats.position_perso = global_position
 	stats.mort = true
-	animationState.travel("Mort")
 	
 func _animation_mort_terminee():
 		get_tree().change_scene("res://Scenes/Menu.tscn")

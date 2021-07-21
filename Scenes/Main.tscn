@@ -7,7 +7,7 @@
 [ext_resource path="res://Recherche environnement_v3.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/UIPersoEndu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Cercle.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Camera2D.gd" type="Script" id=8]
+[ext_resource path="res://Script/Camera2D.gd" type="Script" id=8]
 
 [node name="Main" type="Node2D"]
 
