@@ -30,6 +30,8 @@ enum {
 var etat = CHASSE
 
 func _ready():
+	animatedSprite.set_animation("Idle")
+	animatedSprite.set_frame(rand_range(0,7))
 	etat = _choisis_etat_random([IDLE, DEAMBULE])
 
 func _physics_process(delta):

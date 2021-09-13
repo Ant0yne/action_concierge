@@ -38,7 +38,6 @@ position = Vector2( 646, 418 )
 
 [node name="Personnage" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 646.984, 105.656 )
-scale = Vector2( 0.7, 0.7 )
 
 [node name="Camera2D" type="Camera2D" parent="YSort/Personnage"]
 position = Vector2( -924.263, -150.937 )
