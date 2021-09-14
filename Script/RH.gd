@@ -40,6 +40,7 @@ func _physics_process(delta):
 	
 	match etat :
 		IDLE:
+			animatedSprite.set_animation("Idle")
 			velocite = velocite.move_toward(Vector2.ZERO, FRICTION * delta)
 			_a_vu_perso()
 			
@@ -47,6 +48,7 @@ func _physics_process(delta):
 				_reset_etat_timer()
 
 		DEAMBULE:
+			animatedSprite.set_animation("Marche")
 			_a_vu_perso()
 			if deambuleControlle._temps_restant() == 0:
 				_reset_etat_timer()
@@ -57,6 +59,7 @@ func _physics_process(delta):
 				_reset_etat_timer()
 		
 		CHASSE:
+			animatedSprite.set_animation("Marche")
 			_chasse_perso(delta)
 
 	if collisionDouce._en_collision():
@@ -67,7 +70,7 @@ func _acc_vers_point(point, delta):
 	var direction_perso = global_position.direction_to(point)
 #	var direction_perso = (perso.global_position - global_position).normalized()
 	velocite = velocite.move_toward(direction_perso * VIT_MAX, ACCELERATION * delta)
-	animatedSprite.flip_h = velocite.x < 0
+	animatedSprite.flip_h = velocite.x > 0
 	
 func _reset_etat_timer():
 	etat = _choisis_etat_random([IDLE, DEAMBULE])
@@ -83,7 +86,7 @@ func _chasse_perso(delta):
 		_acc_vers_point(perso.global_position, delta)
 	else:
 		etat = IDLE
-	animatedSprite.flip_h = velocite.x < 0
+	animatedSprite.flip_h = velocite.x > 0
 	
 func _choisis_etat_random(liste_etats):
 	liste_etats.shuffle()
