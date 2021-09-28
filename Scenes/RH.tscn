@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0002.png" type="Texture" id=1]
 [ext_resource path="res://Script/RH.gd" type="Script" id=2]
@@ -16,14 +16,26 @@
 [ext_resource path="res://RH/MArche/rh_marche0001.png" type="Texture" id=14]
 [ext_resource path="res://RH/MArche/rh_marche0000.png" type="Texture" id=15]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0003.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/DetectDash.gd" type="Script" id=17]
+[ext_resource path="res://RH/Dash/rh2_marche0000.png" type="Texture" id=18]
+[ext_resource path="res://RH/Dash/rh2_marche0002.png" type="Texture" id=19]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0001.png" type="Texture" id=20]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0004.png" type="Texture" id=21]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0005.png" type="Texture" id=22]
+[ext_resource path="res://RH/Dash/rh2_marche0003.png" type="Texture" id=23]
+[ext_resource path="res://RH/Dash/rh2_marche0004.png" type="Texture" id=24]
+[ext_resource path="res://RH/Dash/rh2_marche0005.png" type="Texture" id=25]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0007.png" type="Texture" id=26]
+[ext_resource path="res://RH/Dash/rh2_marche0001.png" type="Texture" id=27]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0000.png" type="Texture" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "Dash",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 15 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "Marche",
@@ -50,6 +62,9 @@ extents = Vector2( 6.50002, 24.106 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 8.37289, 15.6645 )
 
+[sub_resource type="CircleShape2D" id=7]
+radius = 137.974
+
 [node name="RH" type="KinematicBody2D"]
 scale = Vector2( 0.7, 0.7 )
 collision_layer = 16
@@ -57,9 +72,10 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Marche"
-frame = 4
+animation = "Dash"
+frame = 5
 playing = true
+offset = Vector2( -17, 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 36 )
@@ -94,8 +110,21 @@ position = Vector2( 0, -9 )
 shape = SubResource( 6 )
 
 [node name="DeambuleControlle" parent="." instance=ExtResource( 8 )]
+
+[node name="DetectDash" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectDash"]
+shape = SubResource( 7 )
+
+[node name="TimerDash" type="Timer" parent="DetectDash"]
+one_shot = true
 [connection signal="area_entered" from="HurtBoxe" to="." method="_on_HurtBoxe_area_entered"]
 [connection signal="vie_zero" from="Stats" to="." method="_on_Stats_vie_zero"]
+[connection signal="body_entered" from="DetectDash" to="DetectDash" method="_on_DetectDash_body_entered"]
+[connection signal="body_exited" from="DetectDash" to="DetectDash" method="_on_DetectDash_body_exited"]
 
 [editable path="HurtBoxe"]
 
