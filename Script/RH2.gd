@@ -64,7 +64,7 @@ func _physics_process(delta):
 		TIR:
 			var perso = detectionPerso.perso
 			if perso != null && projectileTimer.is_stopped():
-				animatedSprite.set_animation("Marche")
+				animatedSprite.set_animation("Tir")
 				_tir_projectile(self.global_position.direction_to(perso.global_position))
 			else:
 				etat = IDLE

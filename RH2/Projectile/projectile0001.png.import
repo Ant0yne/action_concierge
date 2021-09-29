@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rh2_marche0003.png-efb14468a02afd15ce30fd182ebd780c.stex"
+path="res://.import/projectile0001.png-70ee4d5c6e94dd4330442ab6f0de8c9a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RH/Dash/rh2_marche0003.png"
-dest_files=[ "res://.import/rh2_marche0003.png-efb14468a02afd15ce30fd182ebd780c.stex" ]
+source_file="res://RH2/Projectile/projectile0001.png"
+dest_files=[ "res://.import/projectile0001.png-70ee4d5c6e94dd4330442ab6f0de8c9a.stex" ]
 
 [params]
 

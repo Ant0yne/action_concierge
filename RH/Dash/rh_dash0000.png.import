@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rh2_marche0005.png-7ca5e498534344ecb8cc5d628a248f6f.stex"
+path="res://.import/rh_dash0000.png-c9ada8dd6e3a97db736344c7b3233dd8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RH/Dash/rh2_marche0005.png"
-dest_files=[ "res://.import/rh2_marche0005.png-7ca5e498534344ecb8cc5d628a248f6f.stex" ]
+source_file="res://RH/Dash/rh_dash0000.png"
+dest_files=[ "res://.import/rh_dash0000.png-c9ada8dd6e3a97db736344c7b3233dd8.stex" ]
 
 [params]
 

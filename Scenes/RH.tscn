@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0002.png" type="Texture" id=1]
 [ext_resource path="res://Script/RH.gd" type="Script" id=2]
@@ -17,22 +17,18 @@
 [ext_resource path="res://RH/MArche/rh_marche0000.png" type="Texture" id=15]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0003.png" type="Texture" id=16]
 [ext_resource path="res://Script/DetectDash.gd" type="Script" id=17]
-[ext_resource path="res://RH/Dash/rh2_marche0000.png" type="Texture" id=18]
-[ext_resource path="res://RH/Dash/rh2_marche0002.png" type="Texture" id=19]
+[ext_resource path="res://RH/Dash/rh_dash0001.png" type="Texture" id=18]
+[ext_resource path="res://RH/Dash/rh_dash0000.png" type="Texture" id=19]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0001.png" type="Texture" id=20]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0004.png" type="Texture" id=21]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0005.png" type="Texture" id=22]
-[ext_resource path="res://RH/Dash/rh2_marche0003.png" type="Texture" id=23]
-[ext_resource path="res://RH/Dash/rh2_marche0004.png" type="Texture" id=24]
-[ext_resource path="res://RH/Dash/rh2_marche0005.png" type="Texture" id=25]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0007.png" type="Texture" id=26]
-[ext_resource path="res://RH/Dash/rh2_marche0001.png" type="Texture" id=27]
 [ext_resource path="res://RH/Idle/Idle Bas/rh_idle_bas0000.png" type="Texture" id=32]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 27 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
-"loop": false,
+"frames": [ ExtResource( 19 ), ExtResource( 18 ) ],
+"loop": true,
 "name": "Dash",
 "speed": 12.0
 }, {
@@ -72,8 +68,8 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "Idle"
-frame = 6
+animation = "Dash"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
