@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const RHEffetMort = preload("res://Scenes/RHEffetMort.tscn")
+const Projectile = preload("res://Scenes/Projectile.tscn")
 
 const FORCE_RECUL = int(350)
 const ACCELERATION = int(300)
@@ -10,6 +11,7 @@ const COLLISION = int(400)
 const MIN_TEMPS_DEAMBULE = int(1)
 const MAX_TEMPS_DEAMBULE = int(3)
 const ECART_CIBLE_DEAMBULE = int(4)
+const LATENCE_TIR = int(2)
 
 onready var stats = $Stats
 onready var detectionPerso = $DetectionPerso
@@ -17,6 +19,7 @@ onready var animatedSprite = $AnimatedSprite
 onready var hurtBox = $HurtBoxe
 onready var collisionDouce = $CollisionDouce
 onready var deambuleControlle = $DeambuleControlle
+onready var projectileTimer = $ProjectileTimer
 
 var velocite = Vector2.ZERO
 var recul = Vector2.ZERO
@@ -24,10 +27,10 @@ var recul = Vector2.ZERO
 enum {
 	IDLE,
 	DEAMBULE,
-	CHASSE,
+	TIR,
 }
 
-var etat = CHASSE
+var etat = TIR
 
 func _ready():
 	animatedSprite.set_animation("Idle")
@@ -58,9 +61,14 @@ func _physics_process(delta):
 			if global_position.distance_to(deambuleControlle.position_cible) <= ECART_CIBLE_DEAMBULE:
 				_reset_etat_timer()
 		
-		CHASSE:
-			animatedSprite.set_animation("Marche")
-			_chasse_perso(delta)
+		TIR:
+			var perso = detectionPerso.perso
+			if perso != null && projectileTimer.is_stopped():
+				animatedSprite.set_animation("Marche")
+				_tir_projectile(self.global_position.direction_to(perso.global_position))
+			else:
+				etat = IDLE
+			animatedSprite.flip_h = velocite.x > 0
 		
 
 	if collisionDouce._en_collision():
@@ -79,15 +87,18 @@ func _reset_etat_timer():
 
 func _a_vu_perso():
 	if detectionPerso._voit_perso():
-		etat = CHASSE
+		etat = TIR
 
-func _chasse_perso(delta):
-	var perso = detectionPerso.perso
-	if perso != null:
-		_acc_vers_point(perso.global_position, delta)
-	else:
-		etat = IDLE
-	animatedSprite.flip_h = velocite.x > 0
+func _tir_projectile(projectile_direction):
+	if Projectile:
+		var projectile = Projectile.instance()
+		get_tree().current_scene.add_child(projectile)
+		projectile.global_position = self.global_position
+		
+		var projectile_rotation = projectile_direction.angle()
+		projectile.rotation = projectile_rotation
+		
+		projectileTimer.start(LATENCE_TIR)
 	
 func _choisis_etat_random(liste_etats):
 	liste_etats.shuffle()
