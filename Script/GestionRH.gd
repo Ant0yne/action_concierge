@@ -3,11 +3,13 @@ extends Node2D
 onready var cercle = CercleDonnees
 
 const RH = preload("res://Scenes/RH.tscn")
+const RH2 = preload("res://Scenes/RH2.tscn")
 
 var vecteur_cible
 var nbre_rh = int(6)
 var ajout_nbre_rh = int(3)
 var rh
+var rh2
 
 func _ready():
 	_random_position()
@@ -21,6 +23,10 @@ func _process(delta):
 			rh = RH.instance()
 			rh.global_position = vecteur_cible
 			add_child(rh)
+			_random_position()
+			rh2 = RH2.instance()
+			rh2.global_position = vecteur_cible
+			add_child(rh2)
 			_random_position()
 		cercle.eclairage_joue = false
 		nbre_rh += ajout_nbre_rh

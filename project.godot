@@ -148,6 +148,7 @@ ui_passer={
 2d_physics/layer_5="RH"
 2d_physics/layer_6="CollisionsDouces"
 2d_physics/layer_7="Cercle"
+2d_physics/layer_8="Projectile"
 
 [rendering]
 
