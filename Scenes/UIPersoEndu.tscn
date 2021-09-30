@@ -8,7 +8,7 @@
 [ext_resource path="res://UI/Poumon.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 19
+size = 100
 font_data = ExtResource( 2 )
 
 [node name="UIPersoEndu" type="Control"]
@@ -32,6 +32,7 @@ margin_left = 133.0
 margin_top = 52.0
 margin_right = 177.0
 margin_bottom = 69.0
+rect_scale = Vector2( 0.2, 0.2 )
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.141176, 0.627451, 0.188235, 1 )
 text = "100%"

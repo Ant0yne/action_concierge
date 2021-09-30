@@ -141,16 +141,6 @@ animations = [ {
 "name": "Idle Droite",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 97 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 96 ), ExtResource( 98 ) ],
-"loop": true,
-"name": "Attaque Droite",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 105 ), ExtResource( 109 ), ExtResource( 16 ), ExtResource( 103 ), ExtResource( 106 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 108 ) ],
-"loop": true,
-"name": "Marche Droite",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 117 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "Dash Gauche",
@@ -181,6 +171,16 @@ animations = [ {
 "name": "Idle Haut",
 "speed": 12.0
 }, {
+"frames": [ ExtResource( 72 ), ExtResource( 74 ), ExtResource( 73 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 90 ) ],
+"loop": true,
+"name": "Marche Bas",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 105 ), ExtResource( 109 ), ExtResource( 16 ), ExtResource( 103 ), ExtResource( 106 ), ExtResource( 104 ), ExtResource( 107 ), ExtResource( 108 ) ],
+"loop": true,
+"name": "Marche Droite",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 118 ), ExtResource( 3 ) ],
 "loop": true,
 "name": "Dash Haut",
@@ -191,19 +191,19 @@ animations = [ {
 "name": "Idle Gauche",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 72 ), ExtResource( 74 ), ExtResource( 73 ), ExtResource( 77 ), ExtResource( 76 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 90 ) ],
+"frames": [ ExtResource( 97 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 96 ), ExtResource( 98 ) ],
 "loop": true,
-"name": "Marche Bas",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 116 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Dash Droite",
+"name": "Attaque Droite",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 115 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Dash Bas",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 116 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Dash Droite",
 "speed": 12.0
 } ]
 

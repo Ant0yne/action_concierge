@@ -24,18 +24,12 @@
 [ext_resource path="res://Cercle/cercle_rempli.png" type="Texture" id=22]
 [ext_resource path="res://Script/Cercle.gd" type="Script" id=23]
 
-
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 5 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 18 ) ],
 "loop": false,
 "name": "Eclairage",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "Idle Abime 1",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 20 ) ],
 "loop": true,
@@ -47,20 +41,25 @@ animations = [ {
 "name": "Idle Vide",
 "speed": 12.0
 }, {
+"frames": [ ExtResource( 21 ) ],
+"loop": true,
+"name": "Idle Detruit",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 16 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 3 ), ExtResource( 1 ), ExtResource( 4 ) ],
 "loop": false,
 "name": "Remplissage",
 "speed": 12.0
 }, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "Idle Abime 1",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 22 ) ],
 "loop": true,
 "name": "Idle Rempli",
 "speed": 12.0
-}, {
-"frames": [ ExtResource( 21 ) ],
-"loop": true,
-"name": "Idle Detruit",
-"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=2]

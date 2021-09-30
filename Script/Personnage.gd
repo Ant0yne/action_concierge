@@ -128,8 +128,8 @@ func _deplacement():
 	velocite = move_and_slide(velocite)
 
 func _on_HurtBoxe_area_entered(area):
-		hurtBox._start_invincible(TPS_INVINCIBLE)
-		limiteDegat.start(0.1)
+	hurtBox._start_invincible(TPS_INVINCIBLE)
+	limiteDegat.start(0.1)
 
 func _on_LimiteDegat_timeout():
 	limiteDegat.stop()

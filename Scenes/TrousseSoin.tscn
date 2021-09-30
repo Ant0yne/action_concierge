@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Trousse/Kit soin ouvert.png" type="Texture" id=1]
+[ext_resource path="res://Trousse/Infobulle.png" type="Texture" id=2]
+[ext_resource path="res://Trousse/Kit soin.png" type="Texture" id=3]
+[ext_resource path="res://Font/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Script/TrousseSoin.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "ouvert",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 4 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 26.0779, 49.3382 )
+
+[node name="TrousseSoin" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Infobulle" type="Sprite" parent="."]
+position = Vector2( 0, -40 )
+texture = ExtResource( 2 )
+
+[node name="Trousse" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -0.181025
+margin_top = -48.4449
+margin_right = 117.819
+margin_bottom = 39.5551
+rect_scale = Vector2( 0.17, 0.17 )
+custom_fonts/font = SubResource( 2 )
+text = "10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.100815, 32.2515 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
