@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Script/Menu.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Perso/icon_idle_bas.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Menu Option.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Décor/decor_test.png" type="Texture" id=5]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,6 +16,7 @@ margin_right = 333.695
 margin_bottom = 613.879
 focus_neighbour_right = NodePath("../Credit")
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 5 )
 texture_focused = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -27,6 +30,7 @@ margin_bottom = 607.885
 focus_neighbour_left = NodePath("../Jouer")
 focus_neighbour_right = NodePath("../Quitter")
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 5 )
 texture_focused = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -39,10 +43,13 @@ margin_right = 968.977
 margin_bottom = 606.696
 focus_neighbour_left = NodePath("../Credit")
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 5 )
 texture_focused = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Menu Option" parent="." instance=ExtResource( 4 )]
 [connection signal="button_up" from="Jouer" to="." method="_on_Jouer_button_up"]
 [connection signal="button_up" from="Credit" to="." method="_on_TextureButton_button_up"]
 [connection signal="button_up" from="Quitter" to="." method="_on_Quitter_button_up"]

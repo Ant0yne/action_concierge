@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Décor/decor_test.png" type="Texture" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Perso/icon_idle_bas.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Menu Option.gd" type="Script" id=4]
+
+[node name="Menu Option" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="."]
+margin_left = 233.0
+margin_top = 497.0
+margin_right = 341.0
+margin_bottom = 521.0
+rect_scale = Vector2( 2, 2 )
+text = "cache souris"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quitter" type="TextureButton" parent="."]
+margin_left = 1203.9
+margin_top = 626.256
+margin_right = 1267.9
+margin_bottom = 690.256
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+texture_focused = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="button_up" from="Quitter" to="." method="_on_Quitter_button_up"]

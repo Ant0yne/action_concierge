@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Décor/decor_test.png" type="Texture" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Perso/icon_idle_bas.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Menu Pause.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Menu Option.tscn" type="PackedScene" id=5]
+
+[node name="Menu Pause" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reprendre" type="TextureButton" parent="."]
+margin_left = 161.817
+margin_top = 516.916
+margin_right = 201.817
+margin_bottom = 556.916
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+texture_focused = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="TextureButton" parent="."]
+margin_left = 630.787
+margin_top = 515.418
+margin_right = 694.787
+margin_bottom = 579.418
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+texture_focused = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quitter" type="TextureButton" parent="."]
+margin_left = 1032.33
+margin_top = 506.428
+margin_right = 1096.33
+margin_bottom = 570.428
+texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 1 )
+texture_focused = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu Option" parent="." instance=ExtResource( 5 )]
+[connection signal="button_up" from="Reprendre" to="." method="_on_Reprendre_button_up"]
+[connection signal="button_up" from="Options" to="." method="_on_Options_button_up"]
