@@ -32,6 +32,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Taille st" type="HSlider" parent="."]
+margin_left = 326.0
+margin_top = 211.0
+margin_right = 586.0
+margin_bottom = 227.0
+max_value = 255.0
+rounded = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Quitter" type="TextureButton" parent="."]
 margin_left = 1203.9
 margin_top = 626.256
@@ -44,4 +55,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="toggled" from="CheckBox" to="." method="_on_CheckBox_toggled"]
+[connection signal="value_changed" from="Taille st" to="." method="_on_Taille_st_value_changed"]
 [connection signal="button_up" from="Quitter" to="." method="_on_Quitter_button_up"]

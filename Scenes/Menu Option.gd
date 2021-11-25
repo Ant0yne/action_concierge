@@ -23,3 +23,8 @@ func _on_Quitter_button_up():
 
 func _on_CheckBox_toggled(button_pressed):
 	choixOption._souris_capture()
+
+
+func _on_Taille_st_value_changed(value):
+	choixOption.tailleST.size = value
+	print(choixOption.tailleST.size)

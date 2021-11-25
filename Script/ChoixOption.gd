@@ -1,5 +1,7 @@
 extends Node
 
+onready var tailleST = preload("res://Font/font_test.tres")
+
 var souris_visible = bool(true)
 
 func _souris_capture():
