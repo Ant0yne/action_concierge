@@ -14,6 +14,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 0.843137, 0, 1 )
+margin_right = 1304.0
+margin_bottom = 732.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Reprendre" type="TextureButton" parent="."]
 margin_left = 161.817
 margin_top = 516.916
