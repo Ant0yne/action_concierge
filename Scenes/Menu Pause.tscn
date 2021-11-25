@@ -22,11 +22,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Reprendre" type="TextureButton" parent="."]
+[node name="Bouton" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reprendre" type="TextureButton" parent="Bouton"]
 margin_left = 161.817
 margin_top = 516.916
-margin_right = 201.817
-margin_bottom = 556.916
+margin_right = 225.817
+margin_bottom = 580.916
 texture_normal = ExtResource( 2 )
 texture_hover = ExtResource( 1 )
 texture_focused = ExtResource( 3 )
@@ -34,7 +41,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Options" type="TextureButton" parent="."]
+[node name="Options" type="TextureButton" parent="Bouton"]
 margin_left = 630.787
 margin_top = 515.418
 margin_right = 694.787
@@ -46,7 +53,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Quitter" type="TextureButton" parent="."]
+[node name="Quitter" type="TextureButton" parent="Bouton"]
 margin_left = 1032.33
 margin_top = 506.428
 margin_right = 1096.33
@@ -59,5 +66,5 @@ __meta__ = {
 }
 
 [node name="Menu Option" parent="." instance=ExtResource( 5 )]
-[connection signal="button_up" from="Reprendre" to="." method="_on_Reprendre_button_up"]
-[connection signal="button_up" from="Options" to="." method="_on_Options_button_up"]
+[connection signal="button_up" from="Bouton/Reprendre" to="." method="_on_Reprendre_button_up"]
+[connection signal="button_up" from="Bouton/Options" to="." method="_on_Options_button_up"]
