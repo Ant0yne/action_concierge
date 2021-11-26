@@ -14,3 +14,13 @@ animations = [ {
 [node name="RHEffetTouche" type="AnimatedSprite"]
 frames = SubResource( 1 )
 script = ExtResource( 2 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -42.6786
+margin_top = 28.4417
+margin_right = 39.3214
+margin_bottom = 68.4417
+text = "RH SOUFFRE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
