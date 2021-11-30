@@ -19,14 +19,14 @@
 			}
 		},
 		{
+			"emit_signal": "passer",
+			"event_id": "dialogic_040"
+		},
+		{
 			"character": "character-1625661019.json",
 			"event_id": "dialogic_001",
 			"portrait": "Default",
 			"text": "Bonjour monsieur, vous m'avez appelé ?"
-		},
-		{
-			"emit_signal": "passer",
-			"event_id": "dialogic_040"
 		},
 		{
 			"event_id": "dialogic_024",

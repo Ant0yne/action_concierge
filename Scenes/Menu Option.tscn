@@ -5,7 +5,6 @@
 [ext_resource path="res://Perso/icon_idle_bas.png" type="Texture" id=3]
 [ext_resource path="res://Script/Menu Option.gd" type="Script" id=4]
 
-
 [node name="Menu Option" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0

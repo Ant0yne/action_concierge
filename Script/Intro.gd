@@ -1,5 +1,6 @@
 extends Node2D
 
+onready var timer = $Timer
 var choixOption = ChoixOption
 
 func _ready():
@@ -13,9 +14,19 @@ func _process(delta):
 
 func signaux_dialogic(valeur):
 	if valeur == "passer" :
-		print("coucouuuuuu")
-		var ev = InputEvent
-		ev.type = InputEvent.JOYSTICK_BUTTON
-		ev.button_index = JOY_SONY_X
-		ev.pressed = true
-		get_tree().input_event(ev)
+		if choixOption.passer_dialogue_auto == true :
+			timer.start(choixOption.temps_lecture)
+
+#		var bouton = InputEvent
+#		bouton.type = InputEvent.JOYSTICK_BUTTON
+#		bouton.button_index = JOY_SONY_X
+#		bouton.pressed = true
+#		get_tree().input_event(bouton)
+
+
+func _on_Timer_timeout():
+	print("coucouuuuuu")
+	var bouton = InputEventAction.new()
+	bouton.action = "ui_accept"
+	bouton.pressed = true
+	Input.parse_input_event(bouton)
