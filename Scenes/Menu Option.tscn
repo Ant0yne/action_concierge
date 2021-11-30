@@ -22,10 +22,10 @@ __meta__ = {
 }
 
 [node name="Cache Souris" type="CheckBox" parent="."]
-margin_left = 427.798
-margin_top = 445.729
-margin_right = 535.798
-margin_bottom = 469.729
+margin_left = 424.97
+margin_top = 110.56
+margin_right = 532.97
+margin_bottom = 134.56
 rect_scale = Vector2( 2, 2 )
 text = "souris caché"
 __meta__ = {
@@ -33,10 +33,10 @@ __meta__ = {
 }
 
 [node name="ST Sons" type="CheckBox" parent="."]
-margin_left = 432.519
-margin_top = 531.93
-margin_right = 508.519
-margin_bottom = 555.93
+margin_left = 426.862
+margin_top = 178.377
+margin_right = 502.862
+margin_bottom = 202.377
 rect_scale = Vector2( 2, 2 )
 text = "ST Sons"
 __meta__ = {
@@ -44,10 +44,10 @@ __meta__ = {
 }
 
 [node name="Dial Auto" type="CheckBox" parent="."]
-margin_left = 438.532
-margin_top = 362.254
-margin_right = 605.532
-margin_bottom = 386.254
+margin_left = 427.218
+margin_top = 45.4702
+margin_right = 594.218
+margin_bottom = 69.4702
 rect_scale = Vector2( 2, 2 )
 text = "passer dialogues auto"
 __meta__ = {
@@ -55,16 +55,23 @@ __meta__ = {
 }
 
 [node name="Taille st" type="HSlider" parent="."]
-margin_left = 431.723
-margin_top = 625.947
-margin_right = 691.723
-margin_bottom = 641.947
+margin_left = 440.208
+margin_top = 264.067
+margin_right = 700.208
+margin_bottom = 280.067
 rect_scale = Vector2( 2, 2 )
 max_value = 50.0
 rounded = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="Taille st"]
+margin_left = 1.77838
+margin_top = -11.7351
+margin_right = 53.7784
+margin_bottom = 2.26486
+text = "Taille ST"
 
 [node name="Quitter" type="TextureButton" parent="."]
 margin_left = 1203.9
@@ -77,8 +84,68 @@ texture_focused = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Musique" type="HSlider" parent="."]
+margin_left = 442.357
+margin_top = 338.759
+margin_right = 702.357
+margin_bottom = 354.759
+rect_scale = Vector2( 2, 2 )
+min_value = -80.0
+max_value = 24.0
+rounded = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Musique"]
+margin_left = 6.0919
+margin_top = -14.4352
+margin_right = 46.0919
+margin_bottom = -0.435181
+text = "Musique"
+
+[node name="Ambiance" type="HSlider" parent="."]
+margin_left = 445.985
+margin_top = 414.008
+margin_right = 705.985
+margin_bottom = 430.008
+rect_scale = Vector2( 2, 2 )
+min_value = -80.0
+max_value = 24.0
+rounded = true
+
+[node name="Label" type="Label" parent="Ambiance"]
+margin_left = 7.29599
+margin_top = -14.4517
+margin_right = 47.296
+margin_bottom = -0.451694
+text = "Ambiance"
+
+[node name="SFX" type="HSlider" parent="."]
+margin_left = 444.428
+margin_top = 482.751
+margin_right = 704.428
+margin_bottom = 498.751
+rect_scale = Vector2( 2, 2 )
+min_value = -80.0
+max_value = 24.0
+rounded = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="SFX"]
+margin_left = 10.5
+margin_top = -13.0
+margin_right = 50.5
+margin_bottom = 1.0
+text = "SFX"
 [connection signal="toggled" from="Cache Souris" to="." method="_on_CheckBox_toggled"]
 [connection signal="toggled" from="ST Sons" to="." method="_on_ST_Sons_toggled"]
 [connection signal="toggled" from="Dial Auto" to="." method="_on_Dial_Auto_toggled"]
 [connection signal="value_changed" from="Taille st" to="." method="_on_Taille_st_value_changed"]
 [connection signal="button_up" from="Quitter" to="." method="_on_Quitter_button_up"]
+[connection signal="value_changed" from="Musique" to="." method="_on_Musique_value_changed"]
+[connection signal="value_changed" from="Ambiance" to="." method="_on_Ambiance_value_changed"]
+[connection signal="value_changed" from="SFX" to="." method="_on_SFX_value_changed"]

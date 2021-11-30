@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Jour2Saison1.ogg-acdaac4697093b235a884f161366201e.oggstr"
+
+[deps]
+
+source_file="res://SD/Jour2Saison1.ogg"
+dest_files=[ "res://.import/Jour2Saison1.ogg-acdaac4697093b235a884f161366201e.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

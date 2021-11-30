@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/menu_full_80bpm.ogg-b0ce8f6f0058c294f5e4a875793f05d1.oggstr"
+
+[deps]
+
+source_file="res://SD/menu_full_80bpm.ogg"
+dest_files=[ "res://.import/menu_full_80bpm.ogg-b0ce8f6f0058c294f5e4a875793f05d1.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

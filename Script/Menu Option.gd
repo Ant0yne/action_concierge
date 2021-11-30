@@ -4,6 +4,9 @@ onready var bouttonTailleST = $"Taille st"
 onready var cacheSouris = $"Cache Souris"
 onready var stSons = $"ST Sons"
 onready var dialAuto = $"Dial Auto"
+onready var musique = $Musique
+onready var ambiance = $Ambiance
+onready var sFX = $SFX
 
 var choixOption = ChoixOption
 
@@ -16,6 +19,9 @@ func _ready():
 	self.visible = false
 	reset_focus_bouton = false
 	bouttonTailleST.value = choixOption.tailleST.size
+	musique.value = choixOption.musique_volume
+	ambiance.value = choixOption.ambiance_volume
+	sFX.value = choixOption.sfx_volume
 	frame_appuye = 0
 	if choixOption.souris_visible == false :
 		cacheSouris.pressed = true
@@ -59,14 +65,28 @@ func _temps_pad_press():
 	if Input.is_action_pressed("ui_dpad_droite"):
 		frame_appuye += 1
 		if frame_appuye >= FRAME_ATTENTE:
-			bouttonTailleST.value += 1
+			if bouttonTailleST.has_focus():
+				bouttonTailleST.value += 1
+			if musique.has_focus():
+				musique.value += 1
+			if ambiance.has_focus():
+				ambiance.value += 1
+			if sFX.has_focus():
+				sFX.value += 1
 	if Input.is_action_just_released("ui_dpad_droite"):
 		frame_appuye = 0
 
 	if Input.is_action_pressed("ui_dpad_gauche"):
 		frame_appuye += 1
 		if frame_appuye >= FRAME_ATTENTE:
-			bouttonTailleST.value -= 1
+			if bouttonTailleST.has_focus():
+				bouttonTailleST.value -= 1
+			if musique.has_focus():
+				musique.value -= 1
+			if ambiance.has_focus():
+				ambiance.value -= 1
+			if sFX.has_focus():
+				sFX.value -= 1
 	if Input.is_action_just_released("ui_dpad_gauche"):
 		frame_appuye = 0
 
@@ -81,3 +101,12 @@ func _on_Dial_Auto_toggled(button_pressed):
 		choixOption.passer_dialogue_auto = true
 	if dialAuto.pressed == false :
 		choixOption.passer_dialogue_auto = false
+
+func _on_Musique_value_changed(value):
+	choixOption.musique_volume = value
+
+func _on_Ambiance_value_changed(value):
+	choixOption.ambiance_volume = value
+
+func _on_SFX_value_changed(value):
+	choixOption.sfx_volume = value

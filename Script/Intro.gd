@@ -17,13 +17,6 @@ func signaux_dialogic(valeur):
 		if choixOption.passer_dialogue_auto == true :
 			timer.start(choixOption.temps_lecture)
 
-#		var bouton = InputEvent
-#		bouton.type = InputEvent.JOYSTICK_BUTTON
-#		bouton.button_index = JOY_SONY_X
-#		bouton.pressed = true
-#		get_tree().input_event(bouton)
-
-
 func _on_Timer_timeout():
 	print("coucouuuuuu")
 	var bouton = InputEventAction.new()

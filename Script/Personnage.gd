@@ -22,6 +22,9 @@ enum {
 	MORT
 }
 
+onready var hitAudio = $Hit
+onready var blessureAudio = $Blessure
+onready var dashAudio = $Dash
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
@@ -32,6 +35,7 @@ onready var hurtBox = $HurtBoxe
 onready var timerEndu = $RecupEndu
 onready var limiteDegat = $LimiteDegat
 onready var gestionRH = CercleDonnees
+onready var choixOption = ChoixOption
 
 var etat = MARCHE
 var velocite = Vector2.ZERO
@@ -51,16 +55,18 @@ func _ready():
 	animationTree.set("parameters/Dash/blend_position", Vector2.DOWN)
 
 func _physics_process(delta):
-#	if Input.is_action_just_released("ui_accept"):
-#		_mort_etat()
+	_gestion_volume_son()
 	match etat:
 		MARCHE:
 			_marche_etat(delta)
 			
 		DASH:
+			dashAudio.play()
 			_dash_etat(delta)
 			
 		ATTAQUE:
+			if !hitAudio.playing :
+				hitAudio.play()
 			_attaque_etat(delta)
 			
 		MORT:
@@ -128,6 +134,7 @@ func _deplacement():
 	velocite = move_and_slide(velocite)
 
 func _on_HurtBoxe_area_entered(area):
+	blessureAudio.play()
 	hurtBox._start_invincible(TPS_INVINCIBLE)
 	limiteDegat.start(0.1)
 
@@ -158,3 +165,11 @@ func _mort_etat():
 	
 func _animation_mort_terminee():
 		get_tree().change_scene("res://Scenes/Menu.tscn")
+
+func _gestion_volume_son():
+	if hitAudio.volume_db != choixOption.sfx_volume :
+		hitAudio.volume_db = choixOption.sfx_volume
+	if blessureAudio.volume_db != choixOption.sfx_volume :
+		blessureAudio.volume_db = choixOption.sfx_volume
+	if dashAudio.volume_db != choixOption.sfx_volume :
+		dashAudio.volume_db = choixOption.sfx_volume
