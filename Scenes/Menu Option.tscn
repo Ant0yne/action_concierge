@@ -141,6 +141,8 @@ margin_top = -13.0
 margin_right = 50.5
 margin_bottom = 1.0
 text = "SFX"
+
+[node name="Test SFX" type="AudioStreamPlayer" parent="."]
 [connection signal="toggled" from="Cache Souris" to="." method="_on_CheckBox_toggled"]
 [connection signal="toggled" from="ST Sons" to="." method="_on_ST_Sons_toggled"]
 [connection signal="toggled" from="Dial Auto" to="." method="_on_Dial_Auto_toggled"]

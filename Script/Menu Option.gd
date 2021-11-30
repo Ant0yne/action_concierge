@@ -7,6 +7,7 @@ onready var dialAuto = $"Dial Auto"
 onready var musique = $Musique
 onready var ambiance = $Ambiance
 onready var sFX = $SFX
+onready var testSFX = $"Test SFX"
 
 var choixOption = ChoixOption
 
@@ -14,6 +15,11 @@ const FRAME_ATTENTE = int(15)
 
 var reset_focus_bouton = bool(false)
 var frame_appuye = int(0)
+var liste_sfx = [
+	preload("res://SD/blessure.wav"),
+	preload("res://SD/dash.wav"),
+	preload("res://SD/hit.wav")
+]
 
 func _ready():
 	self.visible = false
@@ -110,3 +116,12 @@ func _on_Ambiance_value_changed(value):
 
 func _on_SFX_value_changed(value):
 	choixOption.sfx_volume = value
+	testSFX.volume_db = value
+	_fx_aleatoire(liste_sfx)
+
+func _fx_aleatoire (sfx:Array) -> void:
+	if !testSFX.playing :
+		randomize()
+		sfx.shuffle()
+		testSFX.stream = liste_sfx.front()
+		testSFX.play()
