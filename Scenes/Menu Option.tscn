@@ -15,17 +15,18 @@ __meta__ = {
 
 [node name="Panel" type="Panel" parent="."]
 self_modulate = Color( 1, 0.984314, 0, 1 )
+margin_top = -1.41418
 margin_right = 1292.0
-margin_bottom = 729.0
+margin_bottom = 727.586
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Cache Souris" type="CheckBox" parent="."]
-margin_left = 424.97
-margin_top = 110.56
-margin_right = 532.97
-margin_bottom = 134.56
+margin_left = 687.97
+margin_top = 189.56
+margin_right = 795.97
+margin_bottom = 213.56
 rect_scale = Vector2( 2, 2 )
 text = "souris caché"
 __meta__ = {
@@ -33,10 +34,10 @@ __meta__ = {
 }
 
 [node name="ST Sons" type="CheckBox" parent="."]
-margin_left = 426.862
-margin_top = 178.377
-margin_right = 502.862
-margin_bottom = 202.377
+margin_left = 689.862
+margin_top = 257.377
+margin_right = 765.862
+margin_bottom = 281.377
 rect_scale = Vector2( 2, 2 )
 text = "ST Sons"
 __meta__ = {
@@ -44,10 +45,10 @@ __meta__ = {
 }
 
 [node name="Dial Auto" type="CheckBox" parent="."]
-margin_left = 427.218
-margin_top = 45.4702
-margin_right = 594.218
-margin_bottom = 69.4702
+margin_left = 690.218
+margin_top = 121.642
+margin_right = 857.218
+margin_bottom = 145.642
 rect_scale = Vector2( 2, 2 )
 text = "passer dialogues auto"
 __meta__ = {
@@ -55,10 +56,10 @@ __meta__ = {
 }
 
 [node name="Taille st" type="HSlider" parent="."]
-margin_left = 440.208
-margin_top = 264.067
-margin_right = 700.208
-margin_bottom = 280.067
+margin_left = 703.208
+margin_top = 343.067
+margin_right = 963.208
+margin_bottom = 359.067
 rect_scale = Vector2( 2, 2 )
 max_value = 50.0
 rounded = true
@@ -86,10 +87,10 @@ __meta__ = {
 }
 
 [node name="Musique" type="HSlider" parent="."]
-margin_left = 442.357
-margin_top = 338.759
-margin_right = 702.357
-margin_bottom = 354.759
+margin_left = 705.357
+margin_top = 417.759
+margin_right = 965.357
+margin_bottom = 433.759
 rect_scale = Vector2( 2, 2 )
 min_value = -80.0
 max_value = 24.0
@@ -106,10 +107,10 @@ margin_bottom = -0.435181
 text = "Musique"
 
 [node name="Ambiance" type="HSlider" parent="."]
-margin_left = 445.985
-margin_top = 414.008
-margin_right = 705.985
-margin_bottom = 430.008
+margin_left = 708.985
+margin_top = 493.008
+margin_right = 968.985
+margin_bottom = 509.008
 rect_scale = Vector2( 2, 2 )
 min_value = -80.0
 max_value = 24.0
@@ -123,10 +124,10 @@ margin_bottom = -0.451694
 text = "Ambiance"
 
 [node name="SFX" type="HSlider" parent="."]
-margin_left = 444.428
-margin_top = 482.751
-margin_right = 704.428
-margin_bottom = 498.751
+margin_left = 707.428
+margin_top = 560.337
+margin_right = 967.428
+margin_bottom = 576.337
 rect_scale = Vector2( 2, 2 )
 min_value = -80.0
 max_value = 24.0
@@ -142,6 +143,34 @@ margin_right = 50.5
 margin_bottom = 1.0
 text = "SFX"
 
+[node name="Cache Fond" type="CheckBox" parent="."]
+margin_left = 691.036
+margin_top = 68.1959
+margin_right = 858.036
+margin_bottom = 92.1959
+rect_scale = Vector2( 2, 2 )
+text = "Cacher le fond"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Luminosité" type="HSlider" parent="."]
+margin_left = 86.267
+margin_top = 77.7818
+margin_right = 346.267
+margin_bottom = 93.7818
+rect_scale = Vector2( 2, 2 )
+min_value = -1.0
+max_value = 1.0
+step = 0.001
+
+[node name="Label" type="Label" parent="Luminosité"]
+margin_left = 4.94974
+margin_top = -15.5563
+margin_right = 76.9497
+margin_bottom = -1.55634
+text = "Luminosité"
+
 [node name="Test SFX" type="AudioStreamPlayer" parent="."]
 [connection signal="toggled" from="Cache Souris" to="." method="_on_CheckBox_toggled"]
 [connection signal="toggled" from="ST Sons" to="." method="_on_ST_Sons_toggled"]
@@ -151,3 +180,5 @@ text = "SFX"
 [connection signal="value_changed" from="Musique" to="." method="_on_Musique_value_changed"]
 [connection signal="value_changed" from="Ambiance" to="." method="_on_Ambiance_value_changed"]
 [connection signal="value_changed" from="SFX" to="." method="_on_SFX_value_changed"]
+[connection signal="toggled" from="Cache Fond" to="." method="_on_Cache_Fond_toggled"]
+[connection signal="value_changed" from="Luminosité" to="." method="_on_Luminosit_value_changed"]

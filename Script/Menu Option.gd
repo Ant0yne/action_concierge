@@ -1,5 +1,6 @@
 extends Control
 
+onready var luminosite = $"Luminosité"
 onready var bouttonTailleST = $"Taille st"
 onready var cacheSouris = $"Cache Souris"
 onready var stSons = $"ST Sons"
@@ -8,6 +9,7 @@ onready var musique = $Musique
 onready var ambiance = $Ambiance
 onready var sFX = $SFX
 onready var testSFX = $"Test SFX"
+onready var cacheFond = $"Cache Fond"
 
 var choixOption = ChoixOption
 
@@ -28,7 +30,10 @@ func _ready():
 	musique.value = choixOption.musique_volume
 	ambiance.value = choixOption.ambiance_volume
 	sFX.value = choixOption.sfx_volume
+	luminosite.value = choixOption.luminosite
+	
 	frame_appuye = 0
+	
 	if choixOption.souris_visible == false :
 		cacheSouris.pressed = true
 	if choixOption.souris_visible == true :
@@ -41,6 +46,10 @@ func _ready():
 		dialAuto.pressed = false
 	if choixOption.passer_dialogue_auto == true :
 		dialAuto.pressed = true
+	if choixOption.fond_cache == false :
+		cacheFond.pressed = false
+	if choixOption.fond_cache == true :
+		cacheFond.pressed = true
 
 func _process(delta):
 	_focus_manette()
@@ -79,6 +88,8 @@ func _temps_pad_press():
 				ambiance.value += 1
 			if sFX.has_focus():
 				sFX.value += 1
+			if luminosite.has_focus():
+				luminosite.value += 0.002
 	if Input.is_action_just_released("ui_dpad_droite"):
 		frame_appuye = 0
 
@@ -93,6 +104,8 @@ func _temps_pad_press():
 				ambiance.value -= 1
 			if sFX.has_focus():
 				sFX.value -= 1
+			if luminosite.has_focus():
+				luminosite.value -= 0.002
 	if Input.is_action_just_released("ui_dpad_gauche"):
 		frame_appuye = 0
 
@@ -125,3 +138,12 @@ func _fx_aleatoire (sfx:Array) -> void:
 		sfx.shuffle()
 		testSFX.stream = liste_sfx.front()
 		testSFX.play()
+
+func _on_Cache_Fond_toggled(button_pressed):
+	if cacheFond.pressed == true :
+		choixOption.fond_cache = true
+	if cacheFond.pressed == false :
+		choixOption.fond_cache = false
+
+func _on_Luminosit_value_changed(value):
+	choixOption.luminosite = value

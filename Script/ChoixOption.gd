@@ -10,3 +10,5 @@ var passer_dialogue_auto = false
 var musique_volume = int(-12)
 var ambiance_volume = int(-5)
 var sfx_volume = int(0)
+var fond_cache = bool(false)
+var luminosite = float(0.000)
